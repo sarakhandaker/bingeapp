@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Shitty Netflix</title>
+    <script defer type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="toy-header">
+    
+    </div>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+
+    <form method="post" action="index.html">
+      <div class="box">
+    <h1>Login/ Signup</h1>
+
+    <input type="email" name="email" value="username" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
+  
+    <a href="#"><div class="btn">Sign In</div></a> <!-- End Btn -->
+
+    <a href="#"><div id="btn2">Sign Up</div></a> <!-- End Btn2 -->
+  
+    </div> <!-- End Box -->
+    </form>
+
+    <div class="container">
+      <form class="add-show">
+        <h3>Search for A TV Show</h3>
+
+        <input
+          type="text"
+          name="title"
+          value=""
+          placeholder="Enter a show name..."
+          class="input-text"
+        />
+        <br />
+        <br />
+        <input
+          type="submit"
+          name="submit"
+          value="Search"
+          class="submit"
+        />
+      </form>
+    </div>
+    <p style="text-align:center">
+      <button id="new-toy-btn">Add a new show!</button>
+    </p>
+
+    <div id="showlist"></div>
+  </body>
+</html>
