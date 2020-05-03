@@ -7195,3 +7195,32 @@ Processing by EpisodesController#show as */*
 Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.7ms | Allocations: 17453)
 
 
+Started POST "/user_shows" for ::1 at 2020-05-03 11:57:01 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserShowsController#create as */*
+  Parameters: {"user_id"=>1, "api_id"=>526, "title"=>"The Office", "user_show"=>{"user_id"=>1}}
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."api_id" = $1 LIMIT $2[0m  [["api_id", 526], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:19:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_shows_controller.rb:23:in `create'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:23:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:23:in `create'
+  [1m[36mUserShow Create (1.4ms)[0m  [1m[32mINSERT INTO "user_shows" ("show_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["show_id", 4], ["user_id", 1], ["created_at", "2020-05-03 18:57:01.420348"], ["updated_at", "2020-05-03 18:57:01.420348"]]
+  ↳ app/controllers/user_shows_controller.rb:23:in `create'
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_shows_controller.rb:23:in `create'
+Completed 200 OK in 80ms (Views: 0.5ms | ActiveRecord: 19.4ms | Allocations: 20786)
+
+
+Started GET "/episodes/526" for ::1 at 2020-05-03 11:57:03 -0700
+Processing by EpisodesController#show as */*
+  Parameters: {"id"=>"526"}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."api_id" = $1 LIMIT $2[0m  [["api_id", 526], ["LIMIT", 1]]
+  ↳ app/controllers/episodes_controller.rb:6:in `show'
+  [1m[36mEpisode Load (1.0ms)[0m  [1m[34mSELECT "episodes".* FROM "episodes" WHERE "episodes"."show_id" = $1[0m  [["show_id", 4]]
+  ↳ app/controllers/episodes_controller.rb:8:in `show'
+Completed 200 OK in 69ms (Views: 60.8ms | ActiveRecord: 3.8ms | Allocations: 33680)
+
+
