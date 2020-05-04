@@ -67,17 +67,18 @@ card.innerHTML =
   </div>`
 
   parent.appendChild(card)
-  card.addEventListener('click', event => handleFollow(event, title))
+  card.addEventListener('click', event => handleFollow(event, title.show))
 }
 
 //TO DO
 //change user_id from 1 to current user
 function handleFollow(e,object){ 
+  console.log(object)
   let data ={ "user_id": 1,
-                  "api_id": object.show.id,
-                  "title": object.show.name
+                  "api_id": object.id,
+                  "title": object.name
                   }
-      fetch('http://localhost:3000/user_shows', {
+      fetch('http://localhost:8008/user_shows', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -98,7 +99,7 @@ function handleFollow(e,object){
 //send a user eventually...
 function showUserShows() {
   parent.innerText = ""
-  fetch('http://localhost:3000/user_shows/1')
+  fetch('http://localhost:8008/user_shows/1')
   .then(resp=> resp.json())
   .then(resp=>resp.shows.forEach(show => getAPIshow(show)))
 }
@@ -110,7 +111,6 @@ function getAPIshow(show){
 }
 
 function makeusercards(title){
-  console.log(title)
   let card = document.createElement('div')
 card.className = "col-md-4 card-tvshow"
 card.innerHTML =
@@ -141,4 +141,9 @@ card.innerHTML =
   </div>`
 
   parent.appendChild(card)
+  card.addEventListener('click', event => handleDelete(event, title))
+}
+
+function handleDelete(event, object) {
+  console.log("delete?")
 }

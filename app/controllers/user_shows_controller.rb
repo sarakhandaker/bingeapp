@@ -11,9 +11,10 @@ class UserShowsController < ApplicationController
         #     "api_id": 5,
         #     "title": "Under the Dome"
         # }
-       
+        
         sentshow= Show.find_by(api_id: params["api_id"].to_i)
         user=User.find(params["user_id"].to_i)
+        byebug
         if sentshow
           if user.shows.includes(sentshow)
             user_show=UserShow.find_by(user_id: params["user_id"].to_i, show_id: sentshow.id)
@@ -25,7 +26,6 @@ class UserShowsController < ApplicationController
            newshow.populate
            user_show=UserShow.create(user_id: params["user_id"].to_i ,show_id: newshow.id)
         end
-      
         render json: user_show
       end
 
