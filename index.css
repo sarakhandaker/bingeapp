@@ -1,99 +1,206 @@
 body {
     margin: 0;
-    font-family: monospace;
+    font-family: 'Lato', sans-serif;
+    background-color: #F1F1F1;
   }
-  
-  #toy-header {
-    display: flex;
-    justify-content: center;
-    background: rgb(143, 32, 32);
-    opacity: .8;
-    height: 7rem;
-    padding: 1rem;
-  }
-  
-  #toy-header img {
-    height: 6rem;
-    width: auto;
-  }
-  
-  #toy-collection {
-    margin: 2rem;
-  }
-  
-  .card {
+  .hero {
+    background: url('img/Hero.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #FEE7D6;
+    height: 500px;
     text-align: center;
-    border: grey solid 1px;
-    padding: 1rem;
-    width: 15rem;
-    height: 25rem;
-    display: inline-grid;
-    margin: 1rem 2rem;
-    box-shadow: 3px 4px #a11018
+    
   }
-  
-  .toy-avatar {
-    justify-self: center;
-    height: 12rem;
-    width: auto;
+  .logo{
+    padding-bottom: 50px;
+    padding-top: 100px;
   }
-  
-  button {
-    position: relative;
-    background-color: #911a20;
+
+  .welcome{
+    padding-bottom: 50px;
+  }
+
+  .hero h1{
+    color: #ffffff;
+  }
+
+  .hero h2{
+    color: #FA6600;
+  }
+  .search{
+padding: 50px;
+  }
+
+  .search input{
+    border-color: #FA6600;
+    border-radius: 10 0 10 0;
+    border-right: 0px;
+    height: 50px;
+  }
+
+  .search button{
+    border-color: #FA6600;
+     border-left: 0px;
+    border-radius: 0px 10px 10px 0px;
+    height: 50px;
+  }
+
+  .search-result button{
+    background-color: #FA6600;
+    color: #133B63;
+    font-size: 16px;
+    font-weight: bold;
     border: none;
-    border-radius: 5px;
-    height: 3rem;
-    width: max-content;
-    color: whitesmoke;
-    font-size: 18px;
-    justify-self: center;
+    padding: 20px;
   }
-  
-  button:hover {
-    background-color: whitesmoke;
-    border: #e04b52 solid 1px;
-    color: #e04b52;
+
+  .search-result img {
+    padding-right: 10px;
   }
+  .card-tvshow {
+    background-color: #133B63;
+    margin: 20px;
+    padding: 0px !important;
+    border-radius: 15px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.3);
+    }
+    .cardimage{
+     
+      padding: 0px !important;
+      }
+    .cardimage img{
+     
+        width: 100%;
+       
+    }
+    .card-tvshow h3{
+      color: #FA6600;
+      padding-top: 20px;
+    }
+    .card-tvshow h6{
+      color: #ffffff;
+    }
+    .information-box{
+      
+      padding-bottom: 30px;
+    }
+    .information-left img{
+      float: left;
+      padding-right: 15px;
+      
+    }    
+    .information-right{
+      padding: 0px !important;
+    }
+    
+    .follow{
+      background-color: #FA6600;
+      width: 30%;
+      float: right;
+      text-align: center;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-radius: 0px 0px 0px 10px; 
+       
+    }
+    .information-button{
+      float: right;
+      width: 100%;
+      text-align: right;
+      padding-top: 50px;
+      padding-right: 15px;
+    }
+    #all-informations{
+      background-color: #133B63;
+      padding-right: 300px;
+      padding-left: 300px;
+    }
+    .informations-one h3{
+      color: #FA6600;
+    }
+    .informations-one h6{
+      color: #ffffff;
+    }
+    #all-informations p{
+      color: #ffffff;
+      font-size: 16px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+         
+    }
+    .informations-one img{
+      float: left;
+      padding-right: 15px;
+      
+    }
+    .tableinformation{
+      padding-bottom: 50px;
+    }
+    th{
+      color: #ffffff;
+    }
+    td{
+      color: #ffffff;
+    }
+    #formControlSelect{
+      background-color:#133B63;
+      border-color: #FA6600;
+      border-radius: 10px;
+      color: #FA6600;
+      width: 200px;
+      height: 50px;
+    }
+    #formControlSelect option{
+      color: #FA6600;
+      font-weight: bold;
+    }
+.checksesion {
+  background-color: #FA6600;
+    color: #133B63;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 20px;
+    float: right;
+}
+#episodeee{
+  border: solid #FA6600;
+  border-width:3px;
+  padding: 0px  !important;
+  margin-top: 50px;
+
+}
+.episode-image{
+  width: 100%;
+  padding: 0px;
+  padding: 0px !important;
+}
+.episode-image img{
+  width: 100%;
+  padding: 0px;
+  padding: 0px !important;
+}
+.episode-title {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.episode-title h5{
+  font-size: 14px;
+  color: #FA6600;
+}
+.episode-title h6{
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.watched {
+  border: solid #FA6600;
+  border-radius: 10px 0px 0px 0px;
+  text-align: center;
+  float: right;
+  margin-top: 30px;
+  padding-top: 15px;
   
-  .container {
-    padding: 1rem;
-    width: stretch;
-    height: auto;
-    display: none;
-    background: #515DA2;
-    opacity: .8;
-  }
-  
-  .add-toy-form {
-    width: 80%
-  }
-  
-  .submit {
-    position: relative;
-    background-color: #e04b52;
-    border-radius: 5px;
-    height: 2rem;
-    width: max-content;
-    color: whitesmoke;
-    font-size: 18px;
-    justify-self: center;
-    font-family: monospace;
-    margin: 3px;
-  }
-  
-  .submit:hover {
-    background-color: whitesmoke;
-    border: #e04b52 solid 1px;
-    color: #e04b52;
-  }
-  
-  
-  .input-text {
-    border-radius: 5px;
-    height: 2rem;
-    width: 60%;
-    font-size: 18px;
-    font-family: monospace;
-    margin: 3px;
-  }
+}
+
