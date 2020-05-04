@@ -19964,3 +19964,21 @@ Processing by UserShowsController#create as */*
   ↳ app/controllers/user_shows_controller.rb:18:in `create'
   [1m[36mCACHE Show Load (0.0ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
   ↳ app/controllers/user_shows_controller.rb:18:in `create'
+Started GET "/user_shows/1" for ::1 at 2020-05-04 15:31:20 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:5:in `show'
+Completed 200 OK in 57ms (Views: 0.1ms | ActiveRecord: 7.5ms | Allocations: 17508)
+
+
+Started POST "/user_shows" for ::1 at 2020-05-04 15:31:43 -0700
+Processing by UserShowsController#create as */*
+  Parameters: {"user_id"=>1, "api_id"=>431, "title"=>"Friends", "user_show"=>{"user_id"=>1}}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."api_id" = $1 LIMIT $2[0m  [["api_id", 431], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:15:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:16:in `create'

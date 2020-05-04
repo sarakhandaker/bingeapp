@@ -6,8 +6,8 @@ Basic MVP
 Create an account (C)
 Login to your account (R)
 Edit your account (U)
-Save their shows ©
-See your list of shows
+-Save their shows ©
+-See your list of shows
 Edit your list of shows (U)
 Mark episodes watched (U)
 Remove shows from list (D)
