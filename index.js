@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-const div=document.querySelector('')
-
-//ADD SHOW FORM
-const Container = document.querySelector(".container");
-const form=document.getElementsByClassName(".input-group")[0]
-=======
 const form = document.getElementsByClassName("input-group")[0]
 form.addEventListener("submit", event => handleSearch(event))
 
@@ -12,7 +5,6 @@ form.addEventListener("submit", event => handleSearch(event))
 
 const searchResults = document.getElementsByClassName("div search-result")[0]
 const parent = document.getElementById("show")
->>>>>>> d6e647f5b11000cc26ca0a4c0a93e55229c2d69d
 
 //handles the search bar input
 function handleSearch(e) {
