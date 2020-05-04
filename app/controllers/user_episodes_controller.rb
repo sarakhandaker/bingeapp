@@ -4,12 +4,10 @@ class UserEpisodesController < ApplicationController
     end
 
     def create
-
         # {
         #     "user_id": 1,
         #     "episdoe_id": 5,
         # }
-        byebug
         user_episode=UserEpisode.create(user_id: params["user_id"].to_i, episode_id: params["episode_id"].to_i)
       
         render json: user_episode
