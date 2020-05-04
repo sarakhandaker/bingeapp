@@ -46,19 +46,18 @@ card.innerHTML =
       <div class="col-sm-6 information-left">
         <h3>${title.show.name}</h3>
         <h6>${title.show.network.name} - ${title.show.premiered}</h6>
-        <img src="img\seo-and-web.png" alt="">
-        <h6>18555</h6>
+        <img src="img/seo-and-web.png" alt="">
       </div>
       <div class="col-sm-6 information-right">
         <div class="follow">
           <a href="#">
-            <img src="img\plus.png" alt="">
+            <img src="img/plus.png" alt="">
           </a>
         </div>
       
       <div class="information-button">
         <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          <img src="img\Information.png" alt="">
+          <img src="img/Information.png" alt="">
         </a>  
       </div>
         
@@ -125,14 +124,18 @@ card.innerHTML =
       <div class="col-sm-6 information-left">
         <h3>${title.name}</h3>
         <h6>${title.network.name} - ${title.premiered}</h6>
-        <img src="img\seo-and-web.png" alt="">
-        <h6>18555</h6>
+        <img src="img/seo-and-web.png" alt="">
       </div>
       <div class="col-sm-6 information-right">
+      <div class="follow">
+      <a href="#">
+        <span class="remove"> Remove </span>
+      </a>
+    </div>
       
       <div class="information-button">
         <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          <img src="img\Information.png" alt="">
+          <img src="img/Information.png" alt="">
         </a>  
       </div>
         
