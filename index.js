@@ -1,20 +1,8 @@
-let addform = false;
-const div=document.querySelector('#showlist')
+const div=document.querySelector('')
 
 //ADD SHOW FORM
-
-  const addBtn = document.querySelector("#new-toy-btn");
-  const Container = document.querySelector(".container");
-  addBtn.addEventListener("click", () => {
-    addform = !addform;
-    if (addform) {
-      Container.style.display = "block";
-    } else {
-      Container.style.display = "none";
-    }
-  })
-
-const form=document.getElementsByClassName("add-show")[0]
+const Container = document.querySelector(".container");
+const form=document.getElementsByClassName(".input-group")[0]
 
 form.addEventListener("submit", (e)=> {
     e.preventDefault()
