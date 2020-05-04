@@ -3,54 +3,233 @@
   <head>
     <meta charset="utf-8" />
     <title>Shitty Netflix</title>
-    <script defer type="text/javascript" src="index.js"></script>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
   </head>
   <body>
-    <div id="toy-header">
+    <div class="hero">
+      <div class="container">
+      <div class="row">
+        <div class="col-md-12 logo">
+          <img src="img\logo.png" alt="Logo TV Binge App">
+        </div>
+        <div class="col-md-12 welcome">
+          <h1>Hello, World!</h1>
+        </div>
+        <div class="col-md-3">
+          <div class="col-md-12">
+            <h2>0</h2>
+          </div>
+          <div class="col-md-12">
+          <h2>Followed</h2>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="col-md-12">
+            <h2>0</h2>
+          </div>
+          <div class="col-md-12">
+          <h2>Watched</h2>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="col-md-12">
+            <h2>0</h2>
+          </div>
+          <div class="col-md-12">
+          <h2>Unwatched</h2>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="col-md-12">
+            <h2>0</h2>
+          </div>
+          <div class="col-md-12">
+          <h2>Last aired</h2>
+          </div>
+        </div>
+      </div>   
+      </div>
+    </div>
+    <div class="search">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for TV Shows...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                  <img src="img\search-icon.png" alt="search-icon">
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="div search-result">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <button> <img src="img\back.png" alt=""> Back to homepage</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="div">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 card-tvshow">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-12 cardimage">
+                  <img src="img\The Office.png" alt="">
+                </div>
+                <div class="container information-box">
+                  <div class="row">
+
+                 
+                <div class="col-sm-6 information-left">
+                  <h3>The Office</h3>
+                  <h6>BBC two - 2011</h6>
+                  <img src="img\seo-and-web.png" alt="">
+                  <h6>18555</h6>
+                </div>
+                <div class="col-sm-6 information-right">
+                  <div class="follow">
+                    <a href="#">
+                      <img src="img\plus.png" alt="">
+                    </a>
+                  </div>
+                
+                <div class="information-button">
+                  <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <img src="img\Information.png" alt="">
+                  </a>  
+                </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+              </div>
+            </div>
+        
+          </div>
+        </div>
+      </div>
+    </div>´
+    <div class="container-fluid">
+      <div class="row">
+
+      
+    <div class="collapse" id="collapseExample">
+      
+      <div class="card card-body" id="all-informations">
+        <div class="col-sm-6 informations-one">
+          <h3>The Office</h3>
+          <h6>BBC two - 2011</h6>
+          <img src="img\seo-and-web.png" alt="">
+          <h6>18555</h6>
+        </div>
+        <div class="col-sm-12">
+          <p>Rachel Green, Ross Geller, Monica Geller, Joey Tribbiani, Chandler Bing and Phoebe Buffay are all friends, living off of one another in the heart of New York City. Over the course of ten years, this average group of buddies goes through massive mayhem, family  trouble, past and future romances, fights, laughs, tears and surprises as they learn what it really means to be a friend.</p>
+        </div>
+        <div class="col-sm-6 tableinformation">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th scope="row">Aired</th>
+                <td>222</td>
+              </tr>
+              <tr>
+                <th scope="row">Status</th>
+                <td>Ended</td>
+              </tr>
+              <tr>
+                <th scope="row">Content Rating</th>
+                <td>TV-MA</td>  
+              </tr>
+              <tr>
+                <th scope="row">Country</th>
+                <td>US</td>  
+              </tr>
+              <tr>
+                <th scope="row">Runtime</th>
+                <td>25</td>  
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="select-season">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                   <select class="form-control" id="formControlSelect">
+                    <option>Season</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <button class="checksesion">Mark season 2 as watched</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 " id="episodeee">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-12 episode-image">
+                      <img src="img\friends.png" alt="">
+                    </div>
+                    <div class="container information-episode">
+                      <div class="row">
     
+                     
+                    <div class="col-md-9 episode-title" >
+                      <h5>2x1 - The One After The Super Bowl (1)</h5>
+                      <h6>21:00 Thursday Feb 22, 1996</h6>
+                    </div>
+                    <div class="col-md-3 watched">
+                         <a href="#">
+                          <img src="img\interface (1).png" alt="">
+                        </a>
+                                                 
+                    </div>
+                  </div>
+                </div>
+                
+                  </div>
+                </div>
+            
+              </div>
+            </div>
+          </div>
+        
+        
+      </div>
     </div>
+  </div>
+</div>  
+    
+    
+    <!-- Optional JavaScript -->
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
-
-    <form method="post" action="index.html">
-      <div class="box">
-    <h1>Login/ Signup</h1>
-
-    <input type="email" name="email" value="username" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
-  
-    <a href="#"><div class="btn">Sign In</div></a> <!-- End Btn -->
-
-    <a href="#"><div id="btn2">Sign Up</div></a> <!-- End Btn2 -->
-  
-    </div> <!-- End Box -->
-    </form>
-
-    <div class="container">
-      <form class="add-show">
-        <h3>Search for A TV Show</h3>
-
-        <input
-          type="text"
-          name="title"
-          value=""
-          placeholder="Enter a show name..."
-          class="input-text"
-        />
-        <br />
-        <br />
-        <input
-          type="submit"
-          name="submit"
-          value="Search"
-          class="submit"
-        />
-      </form>
-    </div>
-    <p style="text-align:center">
-      <button id="new-toy-btn">Add a new show!</button>
-    </p>
-
-    <div id="showlist"></div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
