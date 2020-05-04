@@ -4,9 +4,10 @@
     <meta charset="utf-8" />
     <title>Shitty Netflix</title>
     <link rel="stylesheet" href="index.css" />
+    <script defer type="text/javascript" src="index.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
+    <script defer type="text/javascript" src="index.js"></script>
 
   </head>
   <body>
@@ -58,14 +59,14 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for TV Shows...">
+            <form class="input-group">
+              <input name="title" type="text" class="form-control" placeholder="Search for TV Shows...">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
+                <button class="btn btn-default" type="submit">
                   <img src="img\search-icon.png" alt="search-icon">
                 </button>
               </span>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -74,14 +75,14 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <button> <img src="img\back.png" alt=""> Back to homepage</button>
+            <button id="my-shows"> <img src="img\back.png" alt=""> My Shows</button>
           </div>
         </div>
       </div>
     </div>
     <div class="div">
       <div class="container">
-        <div class="row">
+        <div class="row" id="show">
           <div class="col-md-4 card-tvshow">
             <div class="container-fluid">
               <div class="row">
@@ -99,7 +100,7 @@
                   <h6>18555</h6>
                 </div>
                 <div class="col-sm-6 information-right">
-                  <div class="follow">
+                  <div class="follow" id="follow">
                     <a href="#">
                       <img src="img\plus.png" alt="">
                     </a>
