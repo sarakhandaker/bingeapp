@@ -387,3 +387,8 @@ function buildBetterEpisodeCards(title, episodes) {
 //   div2.appendChild(infoDiv)
 //  })
 // }
+
+
+
+//_____________TO DO__________________
+//add episode info(img, airdate) to db
