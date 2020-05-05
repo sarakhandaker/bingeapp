@@ -2,7 +2,8 @@ class UserShowsController < ApplicationController
 
     def show
         user = User.find(params[:id])
-        render json: user.to_json(:include => [:shows], :except => [:updated_at])
+        user_shows=user.user_shows
+        render json: user_shows.to_json(:include => [:show], :except => [:updated_at])
       end
 
       def create
@@ -11,12 +12,15 @@ class UserShowsController < ApplicationController
         #     "api_id": 5,
         #     "title": "Under the Dome"
         # }
+<<<<<<< HEAD
         
+=======
+>>>>>>> 82a9f3a3153781d57e53ce9574b4dc622177315d
         sentshow= Show.find_by(api_id: params["api_id"].to_i)
         user=User.find(params["user_id"].to_i)
         byebug
         if sentshow
-          if user.shows.includes(sentshow)
+          if user.shows.include?(sentshow)
             user_show=UserShow.find_by(user_id: params["user_id"].to_i, show_id: sentshow.id)
           else 
             user_show=UserShow.create(user_id: params["user_id"].to_i, show_id: sentshow.id)
