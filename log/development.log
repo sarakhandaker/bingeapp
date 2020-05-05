@@ -27405,3 +27405,25 @@ Processing by UserShowsController#show as */*
 Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 2224)
 
 
+Started GET "/user_shows/9" for ::1 at 2020-05-05 12:53:47 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.5ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 8.7ms | Allocations: 2326)
+
+
+Started GET "/episodes/1" for ::1 at 2020-05-05 12:54:55 -0700
+Processing by EpisodesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/episodes_controller.rb:6:in `show'
+  [1m[36mEpisode Load (1.3ms)[0m  [1m[34mSELECT "episodes".* FROM "episodes" WHERE "episodes"."show_id" = $1[0m  [["show_id", 1]]
+  ↳ app/controllers/episodes_controller.rb:8:in `show'
+Completed 200 OK in 42ms (Views: 36.4ms | ActiveRecord: 1.8ms | Allocations: 27933)
+
+
