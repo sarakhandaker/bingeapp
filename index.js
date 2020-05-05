@@ -2,6 +2,7 @@ const form = document.getElementsByClassName("input-group")[0]
 const myshowbtn= document.getElementById("my-shows")
 const parent = document.getElementById("show")
 const searchResults = document.getElementsByClassName("div search-result")[0]
+const logoutbtn=document.getElementById("logout")
 
 myshowbtn.addEventListener("click", event => showUserShows())
 form.addEventListener("submit", event => handleSearch(event))
@@ -173,4 +174,84 @@ episodes.forEach(ep => {
   li.innerText=`name: ${ep.name}- season: ${ep.season}`
   div.appendChild(li)
 })
+}
+
+//USER LOGIN STUFF
+start()
+function start() {
+//IF NOT SIGNED IN SHOW LOGIN HTML
+if (!sessionStorage.getItem("user")){
+  let body=document.getElementsByTagName('body')[0]
+  body.innerText=""
+  let loginbtn=document.createElement('button')
+  loginbtn.innerText="LOGIN"
+  let signupbtn=document.createElement('button')
+  signupbtn.innerText="SIGNUP"
+  body.append(loginbtn,signupbtn)
+  signupbtn.addEventListener('click', ()=> signuporlogin(signup=true))
+  loginbtn.addEventListener('click', ()=> signuporlogin(signup=false))
+}
+
+//SIGN UP
+  function signuporlogin(signup){
+    let body=document.getElementsByTagName('body')[0]
+    body.innerHTML=""
+    let form=document.createElement("form")
+    form.innerHTML=  `<label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label for="uname"><b>Location</b></label>
+    <input type="text" placeholder="Enter Location" name="location" required>
+    <button type="submit">Signup</button>`
+    body.append(form)
+    form.addEventListener('submit', (event, signup)=>{
+      event.preventDefault()
+      let username=event.target.uname.value
+      let location=event.target.location.value
+      signup? makeUser(username, location): findUser(username, location)
+    })
+  }
+
+  function makeUser(uname, loc){
+    const data = { username: uname, 
+                  location: loc };
+
+    fetch('http://localhost:3000/users', {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+      signedinuser=data
+      console.log('Success:', data)
+      start()
+    })
+    .catch((error) => {
+      console.error('Error:', error)
+})
+  }
+
+  function findUser(uname, loc){
+    fetch('http://localhost:3000/users')
+    .then(resp=> resp.json())
+    .then(resp=>{
+      user=resp.find(user => user.username==uname && user.location==loc)
+      if (user)
+      {
+        sessionStorage.setItem("user", user.id)
+        location.reload()
+      }
+      else {
+        location.reload()
+      }
+    })
+  }
+
+logoutbtn.addEventListener("click", () => {
+  sessionStorage.clear()
+  location.reload()
+} 
+)
 }
