@@ -1,11 +1,11 @@
-const form = document.getElementsByClassName("input-group")[0]
+const searchForm = document.getElementsByClassName("input-group")[0]
 const myshowbtn= document.getElementById("my-shows")
 const parent = document.getElementById("show")
 const searchResults = document.getElementsByClassName("div search-result")[0]
 const logoutbtn=document.getElementById("logout")
 
 myshowbtn.addEventListener("click", event => showUserShows())
-form.addEventListener("submit", event => handleSearch(event))
+searchForm.addEventListener("submit", event => handleSearch(event))
 
 showUserShows()
 
@@ -88,14 +88,13 @@ function handleFollow(e,object){
 //send a user eventually...
 function showUserShows() {
   parent.innerText = ""
-  fetch(`http://localhost:3000/user_shows/${sessionStorage.getItem("user")}`)
+  fetch(`http://localhost:8008/user_shows/${sessionStorage.getItem("user")}`)
   .then(resp=> resp.json())
   .then(resp=>{
     resp.forEach(usershow => getAPIshow(usershow))})
 }
 
 function getAPIshow(usershow){
-  console.log(usershow)
   fetch(`http://api.tvmaze.com/shows/${usershow.show.api_id}`)
   .then(resp => resp.json())
   .then(resp=> makeusercards(resp, usershow))
@@ -150,7 +149,7 @@ function makeusercards(title, usershow){
 }
 
 function handleDelete(usershow){
-      fetch(`http://localhost:3000/user_shows/${usershow.id}`, {
+      fetch(`http://localhost:8008/user_shows/${usershow.id}`, {
         method: 'DELETE',
       })
       .then(showUserShows()) 
@@ -159,10 +158,10 @@ function handleDelete(usershow){
 function showInfo(title, usershow){
   parent.innerText = ""
   makeusercards(title)
-  fetch(`http://localhost:3000/episodes/${usershow.show_id}`)
+  buildShowCard(title)
+  fetch(`http://localhost:8008/episodes/${usershow.show_id}`)
   .then(resp => resp.json())
-  .then(resp=> addEpisodes(resp))
-
+  .then(resp=> buildEpisodeCards(resp))
 }
 
 function addEpisodes(episodes) {
@@ -254,4 +253,65 @@ logoutbtn.addEventListener("click", () => {
   location.reload()
 } 
 )
+const collapseParent = document.getElementById("collapseExample")
+const epiDiv = document.getElementById("episodeee")
+
+function buildShowCard(show) {
+  let showCardBody = document.createElement('div')
+  showCardBody.className = "card-body"
+  showCardBody.id = "all-informations"
+
+  let infoDiv = document.createElement('div')
+  infoDiv.className = "col-sm-6 informations-one"
+
+  let infoH3 = document.createElement('h3')
+  infoH3.innerText = `${show.name}`
+
+  let infoH6 = document.createElement('h6')
+  infoH6.innerText = `${show.network.name}`
+
+  let summaryDiv = document.createElement('div')
+  summaryDiv.className = "col-sm-12"
+
+  let summaryP = document.createElement('p')
+  summaryP.innerHTML = `${show.summary}`
+
+  collapseParent.innerText = ""
+  collapseParent.appendChild(showCardBody)
+  showCardBody.appendChild(infoDiv)
+  infoDiv.appendChild(infoH3)
+  infoDiv.appendChild(infoH6)
+  showCardBody.appendChild(summaryDiv)
+  summaryDiv.appendChild(summaryP)
+  
+}
+
+
+
+function buildEpisodeCards(episodes) {
+  episodes.forEach(episode => {
+
+  let div1 = document.createElement('div')
+  div1.className = "container-fluid"
+  epiDiv.appendChild(div1)
+  collapseParent.appendChild(epiDiv)
+
+  let div2 = document.createElement('div')
+  div2.className = "row"
+  div1.appendChild(div2)
+
+  // let imgDiv = document.createElement('div')
+  // imgDiv.className = "col-md-12 episode-image"
+  // imgDiv.innerHTML = `<img src="${episode.image.original}" alt="">`
+  // div2.appendChild(imgDiv)
+
+  let infoDiv = document.createElement('div')
+  infoDiv.className = "col-md-9 episode-title"
+  infoDiv.innerHTML = 
+  `
+  <h5>${episode.name}</h5>
+  <h6>${episode.airdate}</h6>
+  `
+  div2.appendChild(infoDiv)
+ })
 }
