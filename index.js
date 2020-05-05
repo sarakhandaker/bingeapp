@@ -1,10 +1,10 @@
-const form = document.getElementsByClassName("input-group")[0]
+const searchForm = document.getElementsByClassName("input-group")[0]
 const myshowbtn= document.getElementById("my-shows")
 const parent = document.getElementById("show")
 const searchResults = document.getElementsByClassName("div search-result")[0]
 
 myshowbtn.addEventListener("click", event => showUserShows())
-form.addEventListener("submit", event => handleSearch(event))
+searchForm.addEventListener("submit", event => handleSearch(event))
 
 showUserShows()
 
@@ -76,7 +76,7 @@ function handleFollow(e,object){
                   "api_id": object.show.id,
                   "title": object.show.name
                   }
-      fetch('http://localhost:3000/user_shows', {
+      fetch('http://localhost:8008/user_shows', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ function handleFollow(e,object){
 //send a user eventually...
 function showUserShows() {
   parent.innerText = ""
-  fetch('http://localhost:3000/user_shows/1')
+  fetch('http://localhost:8008/user_shows/1')
   .then(resp=> resp.json())
   .then(resp=>resp.shows.forEach(show => getAPIshow(show)))
 }
