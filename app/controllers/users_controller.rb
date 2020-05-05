@@ -19,7 +19,7 @@ class UsersController < ApplicationController
         # }
         user=User.create(user_params)
         user.update(score: 0)
-        render json: user, only: [:username, :location]
+        render json: user, only: [:username, :location, :id]
       end
 
       def destroy

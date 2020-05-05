@@ -62,9 +62,8 @@ function makeCard(title) {
 }
 
 //TO DO
-//change user_id from 1 to current user
 function handleFollow(e,object){ 
-  let data ={ "user_id": 1,
+  let data ={ "user_id": sessionStorage.getItem("user"),
                   "api_id": object.show.id,
                   "title": object.show.name
                   }
@@ -89,7 +88,7 @@ function handleFollow(e,object){
 //send a user eventually...
 function showUserShows() {
   parent.innerText = ""
-  fetch('http://localhost:3000/user_shows/1')
+  fetch(`http://localhost:3000/user_shows/${sessionStorage.getItem("user")}`)
   .then(resp=> resp.json())
   .then(resp=>{
     resp.forEach(usershow => getAPIshow(usershow))})
@@ -225,8 +224,8 @@ if (!sessionStorage.getItem("user")){
     .then(response => response.json())
     .then(data => {
       sessionStorage.setItem("user", data.id)
+      console.log(data, sessionStorage.getItem("user"))
       console.log('Success:', data)
-   
       location.reload()
     })
     .catch((error) => {
