@@ -188,12 +188,12 @@ if (!sessionStorage.getItem("user")){
   let signupbtn=document.createElement('button')
   signupbtn.innerText="SIGNUP"
   body.append(loginbtn,signupbtn)
-  signupbtn.addEventListener('click', ()=> signuporlogin(signup=true))
-  loginbtn.addEventListener('click', ()=> signuporlogin(signup=false))
+  signupbtn.addEventListener('click', ()=> signuporlogin(event, true))
+  loginbtn.addEventListener('click', ()=> signuporlogin(event, false))
 }
 
 //SIGN UP
-  function signuporlogin(signup){
+  function signuporlogin(event, signup){
     let body=document.getElementsByTagName('body')[0]
     body.innerHTML=""
     let form=document.createElement("form")
@@ -203,7 +203,7 @@ if (!sessionStorage.getItem("user")){
     <input type="text" placeholder="Enter Location" name="location" required>
     <button type="submit">Signup</button>`
     body.append(form)
-    form.addEventListener('submit', (event, signup)=>{
+    form.addEventListener('submit', (event)=>{
       event.preventDefault()
       let username=event.target.uname.value
       let location=event.target.location.value
@@ -214,7 +214,7 @@ if (!sessionStorage.getItem("user")){
   function makeUser(uname, loc){
     const data = { username: uname, 
                   location: loc };
-
+                 
     fetch('http://localhost:3000/users', {
       method: 'POST', // or 'PUT'
       headers: {
@@ -226,7 +226,8 @@ if (!sessionStorage.getItem("user")){
     .then(data => {
       sessionStorage.setItem("user", data.id)
       console.log('Success:', data)
-      start()
+   
+      location.reload()
     })
     .catch((error) => {
       console.error('Error:', error)
