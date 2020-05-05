@@ -19,9 +19,6 @@ function handleSearch(e) {
 function showTitles(titles){
   parent.innerText = ""
   titles.forEach( title =>{
-      // let li=document.createElement('li')
-      // li.innerText=`${title.show.name}- ${title.show.premiered.slice(0,4)}`
-      // searchResults.appendChild(li)
       makeCard(title)
   }
   )
@@ -99,16 +96,17 @@ function showUserShows() {
   parent.innerText = ""
   fetch('http://localhost:8008/user_shows/1')
   .then(resp=> resp.json())
-  .then(resp=>resp.shows.forEach(show => getAPIshow(show)))
+  .then(resp=>resp.forEach(usershow => getAPIshow(usershow)))
 }
 
-function getAPIshow(show){
-  fetch(`http://api.tvmaze.com/shows/${show.api_id}`)
+function getAPIshow(usershow){
+  console.log(usershow)
+  fetch(`http://api.tvmaze.com/shows/${usershow.show.api_id}`)
   .then(resp => resp.json())
-  .then(resp=> makeusercards(resp))
+  .then(resp=> makeusercards(resp, usershow))
 }
 
-function makeusercards(title){
+function makeusercards(title, usershow){
   console.log(title)
   let card = document.createElement('div')
 card.className = "col-md-4 card-tvshow"
@@ -142,6 +140,13 @@ card.innerHTML =
       </div>
     </div>
   </div>`
-
+  card.addEventListener('click', event => handleDelete(event, usershow))
   parent.appendChild(card)
+}
+
+function handleDelete(event, usershow){
+      fetch(`http://localhost:3000/user_shows/${usershow.id}`, {
+        method: 'DELETE',
+      })
+      .then(showUserShows()) 
 }

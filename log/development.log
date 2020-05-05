@@ -16221,1164 +16221,679 @@ Processing by UserShowsController#show as */*
 Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 3.2ms | Allocations: 2490)
 
 
-Started GET "/user_shows/1" for ::1 at 2020-05-04 15:36:31 -0700
-  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by UserShowsController#show as */*
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
-  ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 93ms (Views: 0.2ms | ActiveRecord: 10.0ms | Allocations: 22166)
-
-
-Started POST "/user_shows" for ::1 at 2020-05-04 15:36:49 -0700
-Processing by UserShowsController#create as */*
-  Parameters: {"user_id"=>1, "api_id"=>431, "title"=>"Friends", "user_show"=>{"user_id"=>1}}
-  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."api_id" = $1 LIMIT $2[0m  [["api_id", 431], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:15:in `create'
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:16:in `create'
-  [1m[36mUserShow Load (0.2ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1 AND "user_shows"."show_id" = $2 LIMIT $3[0m  [["user_id", 1], ["show_id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:19:in `create'
-Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 2159)
-
-
-Started GET "/user_shows/1" for ::1 at 2020-05-04 15:36:49 -0700
-Processing by UserShowsController#show as */*
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
-  ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1732)
-
-
-Started GET "/user_shows/1" for ::1 at 2020-05-04 15:38:07 -0700
-Processing by UserShowsController#show as */*
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (1.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
-  ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 1749)
-
-
-Started GET "/user_shows/1" for ::1 at 2020-05-04 15:39:04 -0700
-Processing by UserShowsController#show as */*
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
-  ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1732)
-
-
-Started GET "/user_shows/1" for ::1 at 2020-05-04 15:39:50 -0700
-Processing by UserShowsController#show as */*
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
-  ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1749)
-
-
-Started POST "/user_shows" for ::1 at 2020-05-04 15:39:55 -0700
-Processing by UserShowsController#create as */*
-  Parameters: {"user_id"=>1, "api_id"=>431, "title"=>"Friends", "user_show"=>{"user_id"=>1}}
-  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."api_id" = $1 LIMIT $2[0m  [["api_id", 431], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:15:in `create'
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:16:in `create'
-  [1m[36mUserShow Load (0.2ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1 AND "user_shows"."show_id" = $2 LIMIT $3[0m  [["user_id", 1], ["show_id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:19:in `create'
-Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1897)
-
-
-Started GET "/user_shows/1" for ::1 at 2020-05-04 15:39:55 -0700
-Processing by UserShowsController#show as */*
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
-  ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1732)
-
-
-Started GET "/user_shows/1" for ::1 at 2020-05-04 15:39:58 -0700
-Processing by UserShowsController#show as */*
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
-  ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1749)
-
-
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "location", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Will"], ["location", "Seattle"], ["score", 0], ["created_at", "2020-05-04 22:40:17.982411"], ["updated_at", "2020-05-04 22:40:17.982411"]]
-  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
-Started GET "/user_shows/1" for ::1 at 2020-05-04 15:40:24 -0700
-  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by UserShowsController#show as */*
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
-  ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 59ms (Views: 0.1ms | ActiveRecord: 8.5ms | Allocations: 17508)
-
-
-Started POST "/user_shows" for ::1 at 2020-05-04 15:40:27 -0700
-Processing by UserShowsController#create as */*
-  Parameters: {"user_id"=>1, "api_id"=>431, "title"=>"Friends", "user_show"=>{"user_id"=>1}}
-  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."api_id" = $1 LIMIT $2[0m  [["api_id", 431], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:15:in `create'
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:16:in `create'
-  [1m[36mUserShow Load (0.2ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1 AND "user_shows"."show_id" = $2 LIMIT $3[0m  [["user_id", 1], ["show_id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:19:in `create'
-Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 2159)
-
-
-Started GET "/user_shows/1" for ::1 at 2020-05-04 15:40:27 -0700
-Processing by UserShowsController#show as */*
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
-  ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1732)
-
-
-Started GET "/user_shows/1" for ::1 at 2020-05-04 15:40:30 -0700
-Processing by UserShowsController#show as */*
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
-  ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1749)
-
-
-Started GET "/user_shows/1" for ::1 at 2020-05-05 09:08:37 -0700
-  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/user_shows/1" for ::1 at 2020-05-04 16:48:48 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by UserShowsController#show as */*
   Parameters: {"id"=>"1"}
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
   ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 60ms (Views: 0.1ms | ActiveRecord: 9.5ms | Allocations: 17508)
+Completed 200 OK in 84ms (Views: 0.2ms | ActiveRecord: 11.7ms | Allocations: 18374)
 
 
-Started POST "/user_shows" for ::1 at 2020-05-05 09:08:45 -0700
-Processing by UserShowsController#create as */*
-  Parameters: {"user_id"=>1, "api_id"=>431, "title"=>"Friends", "user_show"=>{"user_id"=>1}}
-  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."api_id" = $1 LIMIT $2[0m  [["api_id", 431], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:15:in `create'
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:16:in `create'
-  [1m[36mShow Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1 AND "shows"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:18:in `create'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/user_shows_controller.rb:21:in `create'
-  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:21:in `create'
-  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:21:in `create'
-  [1m[36mUserShow Create (0.4ms)[0m  [1m[32mINSERT INTO "user_shows" ("show_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["show_id", 2], ["user_id", 1], ["created_at", "2020-05-05 16:08:45.420143"], ["updated_at", "2020-05-05 16:08:45.420143"]]
-  ↳ app/controllers/user_shows_controller.rb:21:in `create'
-  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/user_shows_controller.rb:21:in `create'
-Completed 200 OK in 33ms (Views: 0.3ms | ActiveRecord: 3.9ms | Allocations: 10427)
-
-
-Started GET "/user_shows/1" for ::1 at 2020-05-05 09:08:45 -0700
+Started GET "/user_shows/1" for ::1 at 2020-05-04 16:51:03 -0700
 Processing by UserShowsController#show as */*
   Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mShow Load (0.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
   ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1840)
+Completed 200 OK in 32ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 2615)
 
 
-Started POST "/user_shows" for ::1 at 2020-05-05 09:08:52 -0700
-Processing by UserShowsController#create as */*
-  Parameters: {"user_id"=>1, "api_id"=>123, "title"=>"Lost", "user_show"=>{"user_id"=>1}}
-  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."api_id" = $1 LIMIT $2[0m  [["api_id", 123], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:15:in `create'
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:16:in `create'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/user_shows_controller.rb:24:in `create'
-  [1m[36mShow Create (0.3ms)[0m  [1m[32mINSERT INTO "shows" ("title", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Lost"], ["api_id", 123], ["created_at", "2020-05-05 16:08:52.511603"], ["updated_at", "2020-05-05 16:08:52.511603"]]
-  ↳ app/controllers/user_shows_controller.rb:24:in `create'
-  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/user_shows_controller.rb:24:in `create'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.5ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 1], ["name", "Pilot (1)"], ["created_at", "2020-05-05 16:08:53.140904"], ["updated_at", "2020-05-05 16:08:53.140904"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 2], ["name", "Pilot (2)"], ["created_at", "2020-05-05 16:08:53.144546"], ["updated_at", "2020-05-05 16:08:53.144546"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 3], ["name", "Tabula Rasa"], ["created_at", "2020-05-05 16:08:53.147494"], ["updated_at", "2020-05-05 16:08:53.147494"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 4], ["name", "Walkabout"], ["created_at", "2020-05-05 16:08:53.150466"], ["updated_at", "2020-05-05 16:08:53.150466"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 5], ["name", "White Rabbit"], ["created_at", "2020-05-05 16:08:53.153274"], ["updated_at", "2020-05-05 16:08:53.153274"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 6], ["name", "House of the Rising Sun"], ["created_at", "2020-05-05 16:08:53.164196"], ["updated_at", "2020-05-05 16:08:53.164196"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 7], ["name", "The Moth"], ["created_at", "2020-05-05 16:08:53.166971"], ["updated_at", "2020-05-05 16:08:53.166971"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 8], ["name", "Confidence Man"], ["created_at", "2020-05-05 16:08:53.169634"], ["updated_at", "2020-05-05 16:08:53.169634"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 9], ["name", "Solitary"], ["created_at", "2020-05-05 16:08:53.172229"], ["updated_at", "2020-05-05 16:08:53.172229"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 10], ["name", "Raised by Another"], ["created_at", "2020-05-05 16:08:53.174808"], ["updated_at", "2020-05-05 16:08:53.174808"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 11], ["name", "All the Best Cowboys Have Daddy Issues"], ["created_at", "2020-05-05 16:08:53.177304"], ["updated_at", "2020-05-05 16:08:53.177304"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 12], ["name", "Whatever the Case May Be"], ["created_at", "2020-05-05 16:08:53.179757"], ["updated_at", "2020-05-05 16:08:53.179757"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 13], ["name", "Hearts and Minds"], ["created_at", "2020-05-05 16:08:53.182306"], ["updated_at", "2020-05-05 16:08:53.182306"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 14], ["name", "Special"], ["created_at", "2020-05-05 16:08:53.185105"], ["updated_at", "2020-05-05 16:08:53.185105"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 15], ["name", "Homecoming"], ["created_at", "2020-05-05 16:08:53.187552"], ["updated_at", "2020-05-05 16:08:53.187552"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 16], ["name", "Outlaws"], ["created_at", "2020-05-05 16:08:53.189933"], ["updated_at", "2020-05-05 16:08:53.189933"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 17], ["name", "...In Translation"], ["created_at", "2020-05-05 16:08:53.192337"], ["updated_at", "2020-05-05 16:08:53.192337"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 18], ["name", "Numbers"], ["created_at", "2020-05-05 16:08:53.194658"], ["updated_at", "2020-05-05 16:08:53.194658"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 19], ["name", "Deus ex Machina"], ["created_at", "2020-05-05 16:08:53.196952"], ["updated_at", "2020-05-05 16:08:53.196952"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 20], ["name", "Do No Harm"], ["created_at", "2020-05-05 16:08:53.200594"], ["updated_at", "2020-05-05 16:08:53.200594"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 21], ["name", "The Greater Good"], ["created_at", "2020-05-05 16:08:53.205254"], ["updated_at", "2020-05-05 16:08:53.205254"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 22], ["name", "Born to Run"], ["created_at", "2020-05-05 16:08:53.209449"], ["updated_at", "2020-05-05 16:08:53.209449"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 23], ["name", "Exodus (1)"], ["created_at", "2020-05-05 16:08:53.215032"], ["updated_at", "2020-05-05 16:08:53.215032"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 24], ["name", "Exodus (2)"], ["created_at", "2020-05-05 16:08:53.220288"], ["updated_at", "2020-05-05 16:08:53.220288"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 1], ["number", 25], ["name", "Exodus (3)"], ["created_at", "2020-05-05 16:08:53.225898"], ["updated_at", "2020-05-05 16:08:53.225898"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 1], ["name", "Man of Science, Man of Faith"], ["created_at", "2020-05-05 16:08:53.232089"], ["updated_at", "2020-05-05 16:08:53.232089"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 2], ["name", "Adrift"], ["created_at", "2020-05-05 16:08:53.238414"], ["updated_at", "2020-05-05 16:08:53.238414"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 3], ["name", "Orientation"], ["created_at", "2020-05-05 16:08:53.243414"], ["updated_at", "2020-05-05 16:08:53.243414"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 4], ["name", "Everybody Hates Hugo"], ["created_at", "2020-05-05 16:08:53.248238"], ["updated_at", "2020-05-05 16:08:53.248238"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 5], ["name", "...And Found"], ["created_at", "2020-05-05 16:08:53.254207"], ["updated_at", "2020-05-05 16:08:53.254207"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 6], ["name", "Abandoned"], ["created_at", "2020-05-05 16:08:53.257828"], ["updated_at", "2020-05-05 16:08:53.257828"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 7], ["name", "The Other 48 Days"], ["created_at", "2020-05-05 16:08:53.261356"], ["updated_at", "2020-05-05 16:08:53.261356"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 8], ["name", "Collision"], ["created_at", "2020-05-05 16:08:53.265750"], ["updated_at", "2020-05-05 16:08:53.265750"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 9], ["name", "What Kate Did"], ["created_at", "2020-05-05 16:08:53.285917"], ["updated_at", "2020-05-05 16:08:53.285917"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 10], ["name", "The 23rd Psalm"], ["created_at", "2020-05-05 16:08:53.288931"], ["updated_at", "2020-05-05 16:08:53.288931"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 11], ["name", "The Hunting Party"], ["created_at", "2020-05-05 16:08:53.291590"], ["updated_at", "2020-05-05 16:08:53.291590"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 12], ["name", "Fire + Water"], ["created_at", "2020-05-05 16:08:53.294248"], ["updated_at", "2020-05-05 16:08:53.294248"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 13], ["name", "The Long Con"], ["created_at", "2020-05-05 16:08:53.297064"], ["updated_at", "2020-05-05 16:08:53.297064"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 14], ["name", "One of Them"], ["created_at", "2020-05-05 16:08:53.300111"], ["updated_at", "2020-05-05 16:08:53.300111"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 15], ["name", "Maternity Leave"], ["created_at", "2020-05-05 16:08:53.302882"], ["updated_at", "2020-05-05 16:08:53.302882"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 16], ["name", "The Whole Truth"], ["created_at", "2020-05-05 16:08:53.305560"], ["updated_at", "2020-05-05 16:08:53.305560"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 17], ["name", "Lockdown"], ["created_at", "2020-05-05 16:08:53.308139"], ["updated_at", "2020-05-05 16:08:53.308139"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 18], ["name", "Dave"], ["created_at", "2020-05-05 16:08:53.310730"], ["updated_at", "2020-05-05 16:08:53.310730"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 19], ["name", "S.O.S."], ["created_at", "2020-05-05 16:08:53.313207"], ["updated_at", "2020-05-05 16:08:53.313207"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 20], ["name", "Two for the Road"], ["created_at", "2020-05-05 16:08:53.315688"], ["updated_at", "2020-05-05 16:08:53.315688"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 21], ["name", "?"], ["created_at", "2020-05-05 16:08:53.318109"], ["updated_at", "2020-05-05 16:08:53.318109"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 22], ["name", "Three Minutes"], ["created_at", "2020-05-05 16:08:53.320638"], ["updated_at", "2020-05-05 16:08:53.320638"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 23], ["name", "Live Together, Die Alone (1)"], ["created_at", "2020-05-05 16:08:53.323174"], ["updated_at", "2020-05-05 16:08:53.323174"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 2], ["number", 24], ["name", "Live Together, Die Alone (2)"], ["created_at", "2020-05-05 16:08:53.325800"], ["updated_at", "2020-05-05 16:08:53.325800"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 1], ["name", "A Tale of Two Cities"], ["created_at", "2020-05-05 16:08:53.328284"], ["updated_at", "2020-05-05 16:08:53.328284"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 2], ["name", "The Glass Ballerina"], ["created_at", "2020-05-05 16:08:53.330946"], ["updated_at", "2020-05-05 16:08:53.330946"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 3], ["name", "Further Instructions"], ["created_at", "2020-05-05 16:08:53.333593"], ["updated_at", "2020-05-05 16:08:53.333593"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 4], ["name", "Every Man for Himself"], ["created_at", "2020-05-05 16:08:53.336158"], ["updated_at", "2020-05-05 16:08:53.336158"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 5], ["name", "The Cost of Living"], ["created_at", "2020-05-05 16:08:53.338622"], ["updated_at", "2020-05-05 16:08:53.338622"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 6], ["name", "I Do"], ["created_at", "2020-05-05 16:08:53.341092"], ["updated_at", "2020-05-05 16:08:53.341092"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 7], ["name", "Not in Portland"], ["created_at", "2020-05-05 16:08:53.344058"], ["updated_at", "2020-05-05 16:08:53.344058"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 8], ["name", "Flashes Before Your Eyes"], ["created_at", "2020-05-05 16:08:53.346513"], ["updated_at", "2020-05-05 16:08:53.346513"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 9], ["name", "Stranger in a Strange Land"], ["created_at", "2020-05-05 16:08:53.348888"], ["updated_at", "2020-05-05 16:08:53.348888"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 10], ["name", "Tricia Tanaka is Dead"], ["created_at", "2020-05-05 16:08:53.351133"], ["updated_at", "2020-05-05 16:08:53.351133"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 11], ["name", "Enter 77"], ["created_at", "2020-05-05 16:08:53.353645"], ["updated_at", "2020-05-05 16:08:53.353645"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 12], ["name", "Par Avion"], ["created_at", "2020-05-05 16:08:53.356359"], ["updated_at", "2020-05-05 16:08:53.356359"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 13], ["name", "The Man from Tallahassee"], ["created_at", "2020-05-05 16:08:53.358847"], ["updated_at", "2020-05-05 16:08:53.358847"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 14], ["name", "Exposé"], ["created_at", "2020-05-05 16:08:53.361220"], ["updated_at", "2020-05-05 16:08:53.361220"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 15], ["name", "Left Behind"], ["created_at", "2020-05-05 16:08:53.363924"], ["updated_at", "2020-05-05 16:08:53.363924"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 16], ["name", "One of Us"], ["created_at", "2020-05-05 16:08:53.375000"], ["updated_at", "2020-05-05 16:08:53.375000"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 17], ["name", "Catch-22"], ["created_at", "2020-05-05 16:08:53.377994"], ["updated_at", "2020-05-05 16:08:53.377994"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 18], ["name", "D.O.C."], ["created_at", "2020-05-05 16:08:53.380854"], ["updated_at", "2020-05-05 16:08:53.380854"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 19], ["name", "The Brig"], ["created_at", "2020-05-05 16:08:53.383768"], ["updated_at", "2020-05-05 16:08:53.383768"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 20], ["name", "The Man Behind the Curtain"], ["created_at", "2020-05-05 16:08:53.386504"], ["updated_at", "2020-05-05 16:08:53.386504"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 21], ["name", "Greatest Hits"], ["created_at", "2020-05-05 16:08:53.389241"], ["updated_at", "2020-05-05 16:08:53.389241"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 22], ["name", "Through the Looking Glass (1)"], ["created_at", "2020-05-05 16:08:53.391804"], ["updated_at", "2020-05-05 16:08:53.391804"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 3], ["number", 23], ["name", "Through the Looking Glass (2)"], ["created_at", "2020-05-05 16:08:53.394422"], ["updated_at", "2020-05-05 16:08:53.394422"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 1], ["name", "The Beginning of the End"], ["created_at", "2020-05-05 16:08:53.396910"], ["updated_at", "2020-05-05 16:08:53.396910"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 2], ["name", "Confirmed Dead"], ["created_at", "2020-05-05 16:08:53.399449"], ["updated_at", "2020-05-05 16:08:53.399449"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 3], ["name", "The Economist"], ["created_at", "2020-05-05 16:08:53.402218"], ["updated_at", "2020-05-05 16:08:53.402218"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 4], ["name", "Eggtown"], ["created_at", "2020-05-05 16:08:53.404919"], ["updated_at", "2020-05-05 16:08:53.404919"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 5], ["name", "The Constant"], ["created_at", "2020-05-05 16:08:53.407480"], ["updated_at", "2020-05-05 16:08:53.407480"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 6], ["name", "The Other Woman"], ["created_at", "2020-05-05 16:08:53.409952"], ["updated_at", "2020-05-05 16:08:53.409952"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 7], ["name", "Ji Yeon"], ["created_at", "2020-05-05 16:08:53.412412"], ["updated_at", "2020-05-05 16:08:53.412412"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 8], ["name", "Meet Kevin Johnson"], ["created_at", "2020-05-05 16:08:53.414982"], ["updated_at", "2020-05-05 16:08:53.414982"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 9], ["name", "The Shape of Things to Come"], ["created_at", "2020-05-05 16:08:53.417536"], ["updated_at", "2020-05-05 16:08:53.417536"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 10], ["name", "Something Nice Back Home"], ["created_at", "2020-05-05 16:08:53.420104"], ["updated_at", "2020-05-05 16:08:53.420104"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 11], ["name", "Cabin Fever"], ["created_at", "2020-05-05 16:08:53.423031"], ["updated_at", "2020-05-05 16:08:53.423031"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 12], ["name", "There's No Place Like Home (1)"], ["created_at", "2020-05-05 16:08:53.425679"], ["updated_at", "2020-05-05 16:08:53.425679"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 13], ["name", "There's No Place Like Home (2)"], ["created_at", "2020-05-05 16:08:53.428150"], ["updated_at", "2020-05-05 16:08:53.428150"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 4], ["number", 14], ["name", "There's No Place Like Home (3)"], ["created_at", "2020-05-05 16:08:53.430521"], ["updated_at", "2020-05-05 16:08:53.430521"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 1], ["name", "Because You Left"], ["created_at", "2020-05-05 16:08:53.432903"], ["updated_at", "2020-05-05 16:08:53.432903"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 2], ["name", "The Lie"], ["created_at", "2020-05-05 16:08:53.435480"], ["updated_at", "2020-05-05 16:08:53.435480"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 3], ["name", "Jughead"], ["created_at", "2020-05-05 16:08:53.437903"], ["updated_at", "2020-05-05 16:08:53.437903"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 4], ["name", "The Little Prince"], ["created_at", "2020-05-05 16:08:53.440301"], ["updated_at", "2020-05-05 16:08:53.440301"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 5], ["name", "This Place is Death"], ["created_at", "2020-05-05 16:08:53.442838"], ["updated_at", "2020-05-05 16:08:53.442838"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 6], ["name", "316"], ["created_at", "2020-05-05 16:08:53.445368"], ["updated_at", "2020-05-05 16:08:53.445368"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 7], ["name", "The Life and Death of Jeremy Bentham"], ["created_at", "2020-05-05 16:08:53.447818"], ["updated_at", "2020-05-05 16:08:53.447818"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 8], ["name", "LaFleur"], ["created_at", "2020-05-05 16:08:53.450248"], ["updated_at", "2020-05-05 16:08:53.450248"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 9], ["name", "Namaste"], ["created_at", "2020-05-05 16:08:53.452794"], ["updated_at", "2020-05-05 16:08:53.452794"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 10], ["name", "He's Our You"], ["created_at", "2020-05-05 16:08:53.463252"], ["updated_at", "2020-05-05 16:08:53.463252"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 11], ["name", "Whatever Happened, Happened"], ["created_at", "2020-05-05 16:08:53.466007"], ["updated_at", "2020-05-05 16:08:53.466007"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 12], ["name", "Dead is Dead"], ["created_at", "2020-05-05 16:08:53.468788"], ["updated_at", "2020-05-05 16:08:53.468788"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 13], ["name", "Some Like It Hoth"], ["created_at", "2020-05-05 16:08:53.471540"], ["updated_at", "2020-05-05 16:08:53.471540"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 14], ["name", "The Variable"], ["created_at", "2020-05-05 16:08:53.474135"], ["updated_at", "2020-05-05 16:08:53.474135"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 15], ["name", "Follow the Leader"], ["created_at", "2020-05-05 16:08:53.476801"], ["updated_at", "2020-05-05 16:08:53.476801"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 16], ["name", "The Incident (1)"], ["created_at", "2020-05-05 16:08:53.479398"], ["updated_at", "2020-05-05 16:08:53.479398"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 5], ["number", 17], ["name", "The Incident (2)"], ["created_at", "2020-05-05 16:08:53.482256"], ["updated_at", "2020-05-05 16:08:53.482256"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 1], ["name", "LA X (1)"], ["created_at", "2020-05-05 16:08:53.484969"], ["updated_at", "2020-05-05 16:08:53.484969"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 2], ["name", "LA X (2)"], ["created_at", "2020-05-05 16:08:53.487444"], ["updated_at", "2020-05-05 16:08:53.487444"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 3], ["name", "What Kate Does"], ["created_at", "2020-05-05 16:08:53.489807"], ["updated_at", "2020-05-05 16:08:53.489807"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 4], ["name", "The Substitute"], ["created_at", "2020-05-05 16:08:53.492392"], ["updated_at", "2020-05-05 16:08:53.492392"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 5], ["name", "Lighthouse"], ["created_at", "2020-05-05 16:08:53.494912"], ["updated_at", "2020-05-05 16:08:53.494912"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 6], ["name", "Sundown"], ["created_at", "2020-05-05 16:08:53.497411"], ["updated_at", "2020-05-05 16:08:53.497411"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.4ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 7], ["name", "Dr. Linus"], ["created_at", "2020-05-05 16:08:53.500219"], ["updated_at", "2020-05-05 16:08:53.500219"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 8], ["name", "Recon"], ["created_at", "2020-05-05 16:08:53.504328"], ["updated_at", "2020-05-05 16:08:53.504328"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 9], ["name", "Ab Aeterno"], ["created_at", "2020-05-05 16:08:53.506860"], ["updated_at", "2020-05-05 16:08:53.506860"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 10], ["name", "The Package"], ["created_at", "2020-05-05 16:08:53.509443"], ["updated_at", "2020-05-05 16:08:53.509443"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.4ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 11], ["name", "Happily Ever After"], ["created_at", "2020-05-05 16:08:53.511883"], ["updated_at", "2020-05-05 16:08:53.511883"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 12], ["name", "Everybody Loves Hugo"], ["created_at", "2020-05-05 16:08:53.515515"], ["updated_at", "2020-05-05 16:08:53.515515"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 13], ["name", "The Last Recruit"], ["created_at", "2020-05-05 16:08:53.518305"], ["updated_at", "2020-05-05 16:08:53.518305"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 14], ["name", "The Candidate"], ["created_at", "2020-05-05 16:08:53.520927"], ["updated_at", "2020-05-05 16:08:53.520927"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 15], ["name", "Across the Sea"], ["created_at", "2020-05-05 16:08:53.523666"], ["updated_at", "2020-05-05 16:08:53.523666"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 16], ["name", "What They Died For"], ["created_at", "2020-05-05 16:08:53.526506"], ["updated_at", "2020-05-05 16:08:53.526506"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 17], ["name", "The End (1)"], ["created_at", "2020-05-05 16:08:53.529087"], ["updated_at", "2020-05-05 16:08:53.529087"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 4], ["season", 6], ["number", 18], ["name", "The End (2)"], ["created_at", "2020-05-05 16:08:53.531521"], ["updated_at", "2020-05-05 16:08:53.531521"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/user_shows_controller.rb:26:in `create'
-  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:26:in `create'
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:26:in `create'
-  [1m[36mUserShow Create (0.2ms)[0m  [1m[32mINSERT INTO "user_shows" ("show_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["show_id", 4], ["user_id", 1], ["created_at", "2020-05-05 16:08:53.537314"], ["updated_at", "2020-05-05 16:08:53.537314"]]
-  ↳ app/controllers/user_shows_controller.rb:26:in `create'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/user_shows_controller.rb:26:in `create'
-Completed 200 OK in 1032ms (Views: 0.2ms | ActiveRecord: 66.9ms | Allocations: 275290)
+Started GET "/user_shows/1" for ::1 at 2020-05-04 16:51:57 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mShow Load (0.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:5:in `show'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 2615)
 
 
-Started GET "/user_shows/1" for ::1 at 2020-05-05 09:08:53 -0700
+Started GET "/user_shows/1" for ::1 at 2020-05-04 16:53:47 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mShow Load (2.0ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:5:in `show'
+Completed 200 OK in 29ms (Views: 4.0ms | ActiveRecord: 2.9ms | Allocations: 2615)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 16:54:59 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mShow Load (0.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:5:in `show'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 2598)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 16:55:24 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:5:in `show'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 2598)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 16:55:41 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:5:in `show'
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 2598)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 16:56:33 -0700
 Processing by UserShowsController#show as */*
   Parameters: {"id"=>"1"}
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/controllers/user_shows_controller.rb:4:in `show'
   [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
   ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1948)
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 2598)
 
 
-Started POST "/user_shows" for ::1 at 2020-05-05 09:09:17 -0700
-Processing by UserShowsController#create as */*
-  Parameters: {"user_id"=>1, "api_id"=>1371, "title"=>"Westworld", "user_show"=>{"user_id"=>1}}
-  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."api_id" = $1 LIMIT $2[0m  [["api_id", 1371], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:15:in `create'
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:16:in `create'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/user_shows_controller.rb:24:in `create'
-  [1m[36mShow Create (0.2ms)[0m  [1m[32mINSERT INTO "shows" ("title", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Westworld"], ["api_id", 1371], ["created_at", "2020-05-05 16:09:17.225073"], ["updated_at", "2020-05-05 16:09:17.225073"]]
-  ↳ app/controllers/user_shows_controller.rb:24:in `create'
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/user_shows_controller.rb:24:in `create'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 1], ["number", 1], ["name", "The Original"], ["created_at", "2020-05-05 16:09:17.599475"], ["updated_at", "2020-05-05 16:09:17.599475"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 1], ["number", 2], ["name", "Chestnut"], ["created_at", "2020-05-05 16:09:17.602833"], ["updated_at", "2020-05-05 16:09:17.602833"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 1], ["number", 3], ["name", "The Stray"], ["created_at", "2020-05-05 16:09:17.605472"], ["updated_at", "2020-05-05 16:09:17.605472"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 1], ["number", 4], ["name", "Dissonance Theory"], ["created_at", "2020-05-05 16:09:17.608025"], ["updated_at", "2020-05-05 16:09:17.608025"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 1], ["number", 5], ["name", "Contrapasso"], ["created_at", "2020-05-05 16:09:17.610447"], ["updated_at", "2020-05-05 16:09:17.610447"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 1], ["number", 6], ["name", "The Adversary"], ["created_at", "2020-05-05 16:09:17.612814"], ["updated_at", "2020-05-05 16:09:17.612814"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 1], ["number", 7], ["name", "Trompe L'Oeil"], ["created_at", "2020-05-05 16:09:17.615028"], ["updated_at", "2020-05-05 16:09:17.615028"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 1], ["number", 8], ["name", "Trace Decay"], ["created_at", "2020-05-05 16:09:17.617183"], ["updated_at", "2020-05-05 16:09:17.617183"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 1], ["number", 9], ["name", "The Well-Tempered Clavier"], ["created_at", "2020-05-05 16:09:17.619395"], ["updated_at", "2020-05-05 16:09:17.619395"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 1], ["number", 10], ["name", "The Bicameral Mind"], ["created_at", "2020-05-05 16:09:17.621570"], ["updated_at", "2020-05-05 16:09:17.621570"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 2], ["number", 1], ["name", "Journey Into Night"], ["created_at", "2020-05-05 16:09:17.623825"], ["updated_at", "2020-05-05 16:09:17.623825"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 2], ["number", 2], ["name", "Reunion"], ["created_at", "2020-05-05 16:09:17.626034"], ["updated_at", "2020-05-05 16:09:17.626034"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 2], ["number", 3], ["name", "Virtù e Fortuna"], ["created_at", "2020-05-05 16:09:17.628190"], ["updated_at", "2020-05-05 16:09:17.628190"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 2], ["number", 4], ["name", "The Riddle of the Sphinx"], ["created_at", "2020-05-05 16:09:17.630396"], ["updated_at", "2020-05-05 16:09:17.630396"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 2], ["number", 5], ["name", "Akane No Mai"], ["created_at", "2020-05-05 16:09:17.632616"], ["updated_at", "2020-05-05 16:09:17.632616"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 2], ["number", 6], ["name", "Phase Space"], ["created_at", "2020-05-05 16:09:17.634724"], ["updated_at", "2020-05-05 16:09:17.634724"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 2], ["number", 7], ["name", "Les Écorchés"], ["created_at", "2020-05-05 16:09:17.636674"], ["updated_at", "2020-05-05 16:09:17.636674"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 2], ["number", 8], ["name", "Kiksuya"], ["created_at", "2020-05-05 16:09:17.638464"], ["updated_at", "2020-05-05 16:09:17.638464"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 2], ["number", 9], ["name", "Vanishing Point"], ["created_at", "2020-05-05 16:09:17.640171"], ["updated_at", "2020-05-05 16:09:17.640171"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 2], ["number", 10], ["name", "The Passenger"], ["created_at", "2020-05-05 16:09:17.642071"], ["updated_at", "2020-05-05 16:09:17.642071"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 3], ["number", 1], ["name", "Parce Domine"], ["created_at", "2020-05-05 16:09:17.643880"], ["updated_at", "2020-05-05 16:09:17.643880"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 3], ["number", 2], ["name", "The Winter Line"], ["created_at", "2020-05-05 16:09:17.645711"], ["updated_at", "2020-05-05 16:09:17.645711"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 3], ["number", 3], ["name", "The Absence of Field"], ["created_at", "2020-05-05 16:09:17.647635"], ["updated_at", "2020-05-05 16:09:17.647635"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 3], ["number", 4], ["name", "The Mother of Exiles"], ["created_at", "2020-05-05 16:09:17.649330"], ["updated_at", "2020-05-05 16:09:17.649330"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 3], ["number", 5], ["name", "Genre"], ["created_at", "2020-05-05 16:09:17.651154"], ["updated_at", "2020-05-05 16:09:17.651154"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 3], ["number", 6], ["name", "Decoherence"], ["created_at", "2020-05-05 16:09:17.653027"], ["updated_at", "2020-05-05 16:09:17.653027"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 3], ["number", 7], ["name", "Passed Pawn"], ["created_at", "2020-05-05 16:09:17.654720"], ["updated_at", "2020-05-05 16:09:17.654720"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[36mEpisode Create (0.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["show_id", 5], ["season", 3], ["number", 8], ["name", "Crisis Theory"], ["created_at", "2020-05-05 16:09:17.656520"], ["updated_at", "2020-05-05 16:09:17.656520"]]
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/show.rb:11:in `block in populate'
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/user_shows_controller.rb:26:in `create'
+Started DELETE "/user_shows/undefined" for ::1 at 2020-05-04 16:56:35 -0700
+Processing by UserShowsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+Started GET "/user_shows/1" for ::1 at 2020-05-04 16:59:02 -0700
+Started GET "/user_shows/1" for ::1 at 2020-05-04 16:59:02 -0700
+Started GET "/user_shows/1" for ::1 at 2020-05-04 16:59:02 -0700
+  [1m[36mUserShow Load (0.9ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:34:in `destroy'
+Completed 404 Not Found in 147605ms (ActiveRecord: 4.8ms | Allocations: 40711)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find UserShow with 'id'=undefined):
+  
+app/controllers/user_shows_controller.rb:34:in `destroy'
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mShow Load (3.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:5:in `show'
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+Completed 200 OK in 54ms (Views: 0.2ms | ActiveRecord: 8.6ms | Allocations: 5250)
+
+
+  [1m[36mShow Load (37.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:5:in `show'
+Completed 200 OK in 56ms (Views: 0.1ms | ActiveRecord: 43.7ms | Allocations: 6598)
+
+
+  [1m[36mShow Load (2.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:5:in `show'
+Completed 200 OK in 60ms (Views: 0.2ms | ActiveRecord: 8.0ms | Allocations: 8414)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:00:28 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:5:in `show'
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 13.1ms | Allocations: 15994)
+
+
+  
+NoMethodError (undefined method `usershows' for #<User:0x00007f9a1ca97a28>
+Did you mean?  user_shows
+               user_shows=):
+  
+app/controllers/user_shows_controller.rb:5:in `show'
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:01:13 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:5:in `show'
+  [1m[36mUserShow Load (0.2ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:5:in `show'
+Completed 200 OK in 50ms (Views: 0.1ms | ActiveRecord: 10.2ms | Allocations: 19061)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:04:54 -0700
+  
+SyntaxError (/Users/sarakhandaker/Development/code/Mod 3/PROJECT TV SHOW/app/controllers/user_shows_controller.rb:5: syntax error, unexpected '(', expecting ']'
+...json(:include => [:user_shows (:include => [:show])], :excep...
+...                              ^
+/Users/sarakhandaker/Development/code/Mod 3/PROJECT TV SHOW/app/controllers/user_shows_controller.rb:5: syntax error, unexpected ')', expecting end
+...ser_shows (:include => [:show])], :except => [:updated_at])
+...                              ^
+/Users/sarakhandaker/Development/code/Mod 3/PROJECT TV SHOW/app/controllers/user_shows_controller.rb:5: syntax error, unexpected ')', expecting end
+...w])], :except => [:updated_at])
+...                              ^
+/Users/sarakhandaker/Development/code/Mod 3/PROJECT TV SHOW/app/controllers/user_shows_controller.rb:41: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/user_shows_controller.rb:5: syntax error, unexpected '(', expecting ']'
+app/controllers/user_shows_controller.rb:5: syntax error, unexpected ')', expecting end
+app/controllers/user_shows_controller.rb:5: syntax error, unexpected ')', expecting end
+app/controllers/user_shows_controller.rb:41: syntax error, unexpected end-of-input, expecting end
+app/controllers/user_shows_controller.rb:5: syntax error, unexpected '(', expecting ']'
+app/controllers/user_shows_controller.rb:5: syntax error, unexpected ')', expecting end
+app/controllers/user_shows_controller.rb:5: syntax error, unexpected ')', expecting end
+app/controllers/user_shows_controller.rb:41: syntax error, unexpected end-of-input, expecting end
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:05:58 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.3ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 61ms (Views: 0.1ms | ActiveRecord: 12.9ms | Allocations: 24205)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:07:04 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.8ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 49ms (Views: 0.1ms | ActiveRecord: 6.3ms | Allocations: 9980)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:07:32 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.4ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 47ms (Views: 0.5ms | ActiveRecord: 7.1ms | Allocations: 9980)
+
+
+Started DELETE "/user_shows/undefined" for ::1 at 2020-05-04 17:07:36 -0700
+Processing by UserShowsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUserShow Load (0.2ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ (byebug):1:in `destroy'
+  [1m[36mCACHE UserShow Load (0.0ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+Completed 404 Not Found in 69566ms (ActiveRecord: 0.3ms | Allocations: 4685)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find UserShow with 'id'=undefined):
+  
+app/controllers/user_shows_controller.rb:35:in `destroy'
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:08:46 -0700
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:08:46 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (1.0ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.0ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mUserShow Load (5.9ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (29.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.0ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (2.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 0.4ms | ActiveRecord: 10.9ms | Allocations: 15655)
+
+
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (3.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (3.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (37.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 177ms (Views: 0.7ms | ActiveRecord: 96.4ms | Allocations: 20106)
+
+
+Started DELETE "/user_shows/undefined" for ::1 at 2020-05-04 17:08:51 -0700
+Processing by UserShowsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:09:08 -0700
+  [1m[36mUserShow Load (0.7ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+Completed 404 Not Found in 16936ms (ActiveRecord: 0.7ms | Allocations: 2930)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find UserShow with 'id'=undefined):
+  
+app/controllers/user_shows_controller.rb:35:in `destroy'
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.3ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
   [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:26:in `create'
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/user_shows_controller.rb:26:in `create'
-  [1m[36mUserShow Create (0.2ms)[0m  [1m[32mINSERT INTO "user_shows" ("show_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["show_id", 5], ["user_id", 1], ["created_at", "2020-05-05 16:09:17.666971"], ["updated_at", "2020-05-05 16:09:17.666971"]]
-  ↳ app/controllers/user_shows_controller.rb:26:in `create'
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/user_shows_controller.rb:26:in `create'
-Completed 200 OK in 446ms (Views: 0.2ms | ActiveRecord: 13.1ms | Allocations: 69211)
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 34ms (Views: 0.1ms | ActiveRecord: 4.3ms | Allocations: 9979)
 
 
-Started GET "/user_shows/1" for ::1 at 2020-05-05 09:09:17 -0700
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:09:11 -0700
 Processing by UserShowsController#show as */*
   Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
-  ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 2058)
+  [1m[36mUserShow Load (1.4ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 116ms (Views: 0.3ms | ActiveRecord: 7.5ms | Allocations: 9980)
 
 
-Started GET "/user_shows/1" for ::1 at 2020-05-05 09:09:22 -0700
+Started DELETE "/user_shows/undefined" for ::1 at 2020-05-04 17:09:13 -0700
+Processing by UserShowsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUserShow Load (0.8ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+Completed 404 Not Found in 23570ms (ActiveRecord: 0.8ms | Allocations: 2827)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:09:36 -0700
+  
+ActiveRecord::RecordNotFound (Couldn't find UserShow with 'id'=undefined):
+  
+app/controllers/user_shows_controller.rb:35:in `destroy'
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.3ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.0ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 4.8ms | Allocations: 9979)
+
+
+Started DELETE "/user_shows/1" for ::1 at 2020-05-04 17:09:44 -0700
+Processing by UserShowsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUserShow Load (1.0ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1:in `destroy'
+  [1m[36mCACHE UserShow Load (0.0ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_shows_controller.rb:36:in `destroy'
+  [1m[36mUserShow Destroy (0.4ms)[0m  [1m[31mDELETE FROM "user_shows" WHERE "user_shows"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:36:in `destroy'
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_shows_controller.rb:36:in `destroy'
+Completed 204 No Content in 22510ms (ActiveRecord: 13.2ms | Allocations: 8559)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:10:11 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.7ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (3.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (5.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (2.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (2.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 66ms (Views: 0.5ms | ActiveRecord: 19.8ms | Allocations: 9007)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:10:20 -0700
 Processing by UserShowsController#show as */*
   Parameters: {"id"=>"1"}
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/controllers/user_shows_controller.rb:4:in `show'
-  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
-  ↳ app/controllers/user_shows_controller.rb:5:in `show'
-Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 2075)
+  [1m[36mUserShow Load (0.2ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 115ms (Views: 0.2ms | ActiveRecord: 18.9ms | Allocations: 23227)
+
+
+Started DELETE "/user_shows/8" for ::1 at 2020-05-04 17:10:23 -0700
+Processing by UserShowsController#destroy as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mUserShow Load (4.5ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:34:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+  [1m[36mUserShow Destroy (1.7ms)[0m  [1m[31mDELETE FROM "user_shows" WHERE "user_shows"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+Completed 204 No Content in 40ms (ActiveRecord: 8.5ms | Allocations: 2281)
+
+
+Started DELETE "/user_shows/7" for ::1 at 2020-05-04 17:10:31 -0700
+Processing by UserShowsController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mUserShow Load (1.0ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:34:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+  [1m[36mUserShow Destroy (0.5ms)[0m  [1m[31mDELETE FROM "user_shows" WHERE "user_shows"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 3.0ms | Allocations: 2178)
+
+
+Started DELETE "/user_shows/8" for ::1 at 2020-05-04 17:11:25 -0700
+Processing by UserShowsController#destroy as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mUserShow Load (1.6ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:34:in `destroy'
+Completed 404 Not Found in 5ms (ActiveRecord: 1.6ms | Allocations: 596)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find UserShow with 'id'=8):
+  
+app/controllers/user_shows_controller.rb:34:in `destroy'
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:11:25 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.6ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 33ms (Views: 0.2ms | ActiveRecord: 4.1ms | Allocations: 7068)
+
+
+Started DELETE "/user_shows/6" for ::1 at 2020-05-04 17:11:32 -0700
+Processing by UserShowsController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mUserShow Load (1.1ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:34:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+  [1m[36mUserShow Destroy (2.3ms)[0m  [1m[31mDELETE FROM "user_shows" WHERE "user_shows"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+Completed 204 No Content in 18ms (ActiveRecord: 9.0ms | Allocations: 2178)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:11:37 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.9ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 42ms (Views: 0.5ms | ActiveRecord: 4.5ms | Allocations: 6100)
+
+
+Started DELETE "/user_shows/5" for ::1 at 2020-05-04 17:12:43 -0700
+Processing by UserShowsController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mUserShow Load (17.1ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:34:in `destroy'
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+  [1m[36mUserShow Destroy (10.3ms)[0m  [1m[31mDELETE FROM "user_shows" WHERE "user_shows"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+Completed 204 No Content in 41ms (ActiveRecord: 32.8ms | Allocations: 2179)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:12:43 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.3ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (3.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 42ms (Views: 0.2ms | ActiveRecord: 6.4ms | Allocations: 5131)
+
+
+Started DELETE "/user_shows/9" for ::1 at 2020-05-04 17:12:52 -0700
+Processing by UserShowsController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUserShow Load (1.2ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:34:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+  [1m[36mUserShow Destroy (1.9ms)[0m  [1m[31mDELETE FROM "user_shows" WHERE "user_shows"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_shows_controller.rb:35:in `destroy'
+Completed 204 No Content in 12ms (ActiveRecord: 5.1ms | Allocations: 2178)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:12:52 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (18.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.9ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 55ms (Views: 0.1ms | ActiveRecord: 21.4ms | Allocations: 4161)
+
+
+Started GET "/user_shows/1" for ::1 at 2020-05-04 17:12:57 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.3ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 4161)
 
 
