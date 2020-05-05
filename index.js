@@ -19,10 +19,7 @@ function handleSearch(e) {
 })
 }
 
-//--------TO DO------------
 //HANDLE CASE OF NO IMAGE AVAILABLE
-//FILL IN SHOW DATA
-//CONFIRM POPULATION OF CSS ELEMENTS
 function makeCard(title) {
   let card = document.createElement('div')
   card.className = "col-md-4 card-tvshow"
@@ -67,7 +64,7 @@ function handleFollow(e,object){
                   "api_id": object.show.id,
                   "title": object.show.name
                   }
-      fetch('http://localhost:8008/user_shows', {
+      fetch('http://localhost:3000/user_shows', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +85,7 @@ function handleFollow(e,object){
 //send a user eventually...
 function showUserShows() {
   parent.innerText = ""
-  fetch(`http://localhost:8008/user_shows/${sessionStorage.getItem("user")}`)
+  fetch(`http://localhost:3000/user_shows/${sessionStorage.getItem("user")}`)
   .then(resp=> resp.json())
   .then(resp=>{
     resp.forEach(usershow => getAPIshow(usershow))})
@@ -149,7 +146,7 @@ function makeusercards(title, usershow){
 }
 
 function handleDelete(usershow){
-      fetch(`http://localhost:8008/user_shows/${usershow.id}`, {
+      fetch(`http://localhost:3000/user_shows/${usershow.id}`, {
         method: 'DELETE',
       })
       .then(showUserShows()) 
@@ -159,7 +156,7 @@ function showInfo(title, usershow){
   parent.innerText = ""
   makeusercards(title)
   buildShowCard(title)
-  fetch(`http://localhost:8008/episodes/${usershow.show_id}`)
+  fetch(`http://localhost:3000/episodes/${usershow.show_id}`)
   .then(resp => resp.json())
   .then(resp=> buildEpisodeCards(resp))
 }
@@ -213,7 +210,7 @@ if (!sessionStorage.getItem("user")){
     const data = { username: uname, 
                   location: loc };
                  
-    fetch('http://localhost:8008/users', {
+    fetch('http://localhost:3000/users', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
@@ -233,7 +230,7 @@ if (!sessionStorage.getItem("user")){
   }
 
   function findUser(uname, loc){
-    fetch('http://localhost:8008/users')
+    fetch('http://localhost:3000/users')
     .then(resp=> resp.json())
     .then(resp=>{
       user=resp.find(user => user.username==uname && user.location==loc)
@@ -286,32 +283,57 @@ function buildShowCard(show) {
   
 }
 
-
-
 function buildEpisodeCards(episodes) {
-  episodes.forEach(episode => {
+fetch(`http://localhost:3000/user_episodes/${sessionStorage.getItem("user")}`)
+  .then(resp => resp.json())
+  .then(resp=> { let newresp=resp.map(resp=> resp.episode.id)
+    console.log(resp)
+    episodes.forEach(episode => {
+    let div1 = document.createElement('div')
+    div1.className = "container-fluid"
+    epiDiv.appendChild(div1)
+    collapseParent.appendChild(epiDiv)
 
-  let div1 = document.createElement('div')
-  div1.className = "container-fluid"
-  epiDiv.appendChild(div1)
-  collapseParent.appendChild(epiDiv)
+    let div2 = document.createElement('div')
+    div2.className = "row"
+    div1.appendChild(div2)
 
-  let div2 = document.createElement('div')
-  div2.className = "row"
-  div1.appendChild(div2)
-
-  // let imgDiv = document.createElement('div')
-  // imgDiv.className = "col-md-12 episode-image"
-  // imgDiv.innerHTML = `<img src="${episode.image.original}" alt="">`
-  // div2.appendChild(imgDiv)
-
-  let infoDiv = document.createElement('div')
-  infoDiv.className = "col-md-9 episode-title"
-  infoDiv.innerHTML = 
-  `
-  <h5>${episode.name}</h5>
-  <h6>${episode.airdate}</h6>
-  `
-  div2.appendChild(infoDiv)
+    let infoDiv = document.createElement('div')
+    infoDiv.className = "col-md-9 episode-title"
+      if (newresp.includes(episode.id)){
+      infoDiv.classList.toggle("seen")
+      }
+    infoDiv.innerHTML = 
+    `
+    <h5>${episode.name}</h5>
+    <h6>${episode.airdate}</h6>
+    `
+    let btn=document.createElement("button")
+    btn.innerText="Seen"
+    btn.addEventListener('click', ()=> handleSeen(event, episode, infoDiv))
+    div2.append(infoDiv, btn)
  })
+})
+}
+
+function handleSeen (event, episode, infoDiv) {
+  let data ={ "user_id": sessionStorage.getItem("user"),
+  "episode_id": episode.id
+  }
+  fetch('http://localhost:3000/user_episodes', {
+  method: 'POST',
+  headers: {
+  'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),
+  })
+  .then(response => response.json())
+  .then(data => {
+  infoDiv.classList.toggle("seen")
+  console.log(infoDiv)
+  console.log('Success:', data);
+  })
+  .catch((error) => {
+  console.error('Error:', error);
+  })
 }
