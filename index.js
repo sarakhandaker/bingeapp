@@ -158,10 +158,10 @@ function handleDelete(usershow){
 function showInfo(title, usershow){
   parent.innerText = ""
   makeusercards(title)
-  buildShowCard(title)
+  buildBetterShowCard(title)
   fetch(`http://localhost:8008/episodes/${usershow.show_id}`)
   .then(resp => resp.json())
-  .then(resp=> buildEpisodeCards(resp))
+  .then(resp=> buildBetterEpisodeCards(title ,resp))
 }
 
 function addEpisodes(episodes) {
@@ -256,62 +256,134 @@ logoutbtn.addEventListener("click", () => {
 const collapseParent = document.getElementById("collapseExample")
 const epiDiv = document.getElementById("episodeee")
 
-function buildShowCard(show) {
-  let showCardBody = document.createElement('div')
-  showCardBody.className = "card-body"
-  showCardBody.id = "all-informations"
+// function buildShowCard(show) {
+//   let showCardBody = document.createElement('div')
+//   showCardBody.className = "card-body"
+//   showCardBody.id = "all-informations"
 
-  let infoDiv = document.createElement('div')
-  infoDiv.className = "col-sm-6 informations-one"
+//   let infoDiv = document.createElement('div')
+//   infoDiv.className = "col-sm-6 informations-one"
 
-  let infoH3 = document.createElement('h3')
-  infoH3.innerText = `${show.name}`
+//   let infoH3 = document.createElement('h3')
+//   infoH3.innerText = `${show.name}`
 
-  let infoH6 = document.createElement('h6')
-  infoH6.innerText = `${show.network.name}`
+//   let infoH6 = document.createElement('h6')
+//   infoH6.innerText = `${show.network.name}`
 
-  let summaryDiv = document.createElement('div')
-  summaryDiv.className = "col-sm-12"
+//   let summaryDiv = document.createElement('div')
+//   summaryDiv.className = "col-sm-12"
 
-  let summaryP = document.createElement('p')
-  summaryP.innerHTML = `${show.summary}`
+//   let summaryP = document.createElement('p')
+//   summaryP.innerHTML = `${show.summary}`
 
-  collapseParent.innerText = ""
-  collapseParent.appendChild(showCardBody)
-  showCardBody.appendChild(infoDiv)
-  infoDiv.appendChild(infoH3)
-  infoDiv.appendChild(infoH6)
-  showCardBody.appendChild(summaryDiv)
-  summaryDiv.appendChild(summaryP)
+//   //collapseParent.innerText = ""
+//   collapseParent.appendChild(showCardBody)
+//   showCardBody.appendChild(infoDiv)
+//   infoDiv.appendChild(infoH3)
+//   infoDiv.appendChild(infoH6)
+//   showCardBody.appendChild(summaryDiv)
+//   summaryDiv.appendChild(summaryP)
   
+// }
+
+function buildBetterShowCard(show) {
+  let showName = document.getElementById("showName")
+  showName.innerText = `${show.name}`
+
+  let showNetwork = document.getElementById("showNetwork")
+  showNetwork.innerText = `${show.network.name}`
+
+  let showSummary = document.getElementById("showSummary")
+  showSummary.innerHTML = 
+  `
+  ${show.summary}
+  `
+
+  let showAired = document.getElementById("showAired")
+  showAired.innerText = `${show.premiered}`
+
+  let showStatus = document.getElementById("showStatus")
+  showStatus.innerText = `${show.status}`
 }
 
+function buildBetterEpisodeCards(title, episodes) {
 
-
-function buildEpisodeCards(episodes) {
   episodes.forEach(episode => {
+  let episodeRow = document.getElementById("episodeRow")
 
-  let div1 = document.createElement('div')
-  div1.className = "container-fluid"
-  epiDiv.appendChild(div1)
-  collapseParent.appendChild(epiDiv)
+
+  let totalDiv = document.createElement('div')
+  totalDiv.id = "episodeee"
+  totalDiv.className = "col-md-3"
+  episodeRow.appendChild(totalDiv)
 
   let div2 = document.createElement('div')
-  div2.className = "row"
-  div1.appendChild(div2)
+  div2.className = "container-fluid"
+  totalDiv.appendChild(div2)
 
-  // let imgDiv = document.createElement('div')
-  // imgDiv.className = "col-md-12 episode-image"
-  // imgDiv.innerHTML = `<img src="${episode.image.original}" alt="">`
-  // div2.appendChild(imgDiv)
+  let div3 = document.createElement('div')
+  div3.className = "row"
+  div2.appendChild(div3)
+
+
+  let imgDiv = document.createElement('div')
+  imgDiv.className = "col-md-12 episode-image"
+  div3.appendChild(imgDiv)
+  let img = document.createElement('img')
+  img.src = `${title.image.original}`
+  imgDiv.appendChild(img)
 
   let infoDiv = document.createElement('div')
-  infoDiv.className = "col-md-9 episode-title"
-  infoDiv.innerHTML = 
+  infoDiv.className = "container episode-title"
+  div3.appendChild(infoDiv)
+
+  let titleh5 = document.createElement('h5')
+  titleh5.innerText = `${episode.name}`
+  infoDiv.appendChild(titleh5)
+
+  let airh6 = document.createElement('h6')
+  airh6.innerText = `Episode Airdate goes here`
+  infoDiv.appendChild(airh6)
+
+
+  let icon = document.createElement('div')
+  icon.className = "col-md-3 watched"
+  icon.innerHTML = 
   `
-  <h5>${episode.name}</h5>
-  <h6>${episode.airdate}</h6>
+  <a href="#">
+    <img src="img\interface (1).png" alt="">
+  </a>
   `
-  div2.appendChild(infoDiv)
- })
+  div3.appendChild(icon)
+
+  })
 }
+
+
+// function buildEpisodeCards(episodes) {
+//   episodes.forEach(episode => {
+
+//   let div1 = document.createElement('div')
+//   div1.className = "container-fluid"
+//   epiDiv.appendChild(div1)
+//   collapseParent.appendChild(epiDiv)
+
+//   let div2 = document.createElement('div')
+//   div2.className = "row"
+//   div1.appendChild(div2)
+
+//   // let imgDiv = document.createElement('div')
+//   // imgDiv.className = "col-md-12 episode-image"
+//   // imgDiv.innerHTML = `<img src="${episode.image.original}" alt="">`
+//   // div2.appendChild(imgDiv)
+
+//   let infoDiv = document.createElement('div')
+//   infoDiv.className = "col-md-9 episode-title"
+//   infoDiv.innerHTML = 
+//   `
+//   <h5>${episode.name}</h5>
+//   <h6>${episode.airdate}</h6>
+//   `
+//   div2.appendChild(infoDiv)
+//  })
+// }
