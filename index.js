@@ -208,12 +208,12 @@ if (!sessionStorage.getItem("user")){
       signup? makeUser(username, location): findUser(username, location)
     })
   }
-
+}
   function makeUser(uname, loc){
     const data = { username: uname, 
                   location: loc };
                  
-    fetch('http://localhost:3000/users', {
+    fetch('http://localhost:8008/users', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
@@ -233,7 +233,7 @@ if (!sessionStorage.getItem("user")){
   }
 
   function findUser(uname, loc){
-    fetch('http://localhost:3000/users')
+    fetch('http://localhost:8008/users')
     .then(resp=> resp.json())
     .then(resp=>{
       user=resp.find(user => user.username==uname && user.location==loc)

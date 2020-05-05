@@ -34553,3 +34553,1058 @@ Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.5ms | Allocations: 343
 
 
 >>>>>>> b1a43ed6f69c60a8b00b83bdada2fafddf2e11ed
+Started GET "/user_shows/null" for ::1 at 2020-05-05 13:12:13 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/william_kennedy/Development/Projects/bingeapp/app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+<<<<<<< HEAD
+^~):
+  
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+Started GET "/user_shows/null" for ::1 at 2020-05-05 13:13:01 -0700
+  
+SyntaxError (/Users/william_kennedy/Development/Projects/bingeapp/app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+<<<<<<< HEAD
+^~):
+  
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+Started POST "/users" for ::1 at 2020-05-05 13:13:08 -0700
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"alexkenned", "location"=>"Seattle", "user"=>{"username"=>"alexkenned", "location"=>"Seattle"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "alexkenned"], ["location", "Seattle"], ["created_at", "2020-05-05 20:13:08.161490"], ["updated_at", "2020-05-05 20:13:08.161490"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "score" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["score", 0], ["updated_at", "2020-05-05 20:13:08.165524"], ["id", 3]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 7.8ms | Allocations: 8723)
+
+
+Started GET "/user_shows/3" for ::1 at 2020-05-05 13:13:08 -0700
+  
+SyntaxError (/Users/william_kennedy/Development/Projects/bingeapp/app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+<<<<<<< HEAD
+^~):
+  
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+Started POST "/user_shows" for ::1 at 2020-05-05 13:13:16 -0700
+  
+SyntaxError (/Users/william_kennedy/Development/Projects/bingeapp/app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+<<<<<<< HEAD
+^~):
+  
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+Started GET "/user_shows/3" for ::1 at 2020-05-05 13:13:16 -0700
+  
+SyntaxError (/Users/william_kennedy/Development/Projects/bingeapp/app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+<<<<<<< HEAD
+^~):
+  
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+Started GET "/user_shows/3" for ::1 at 2020-05-05 13:13:22 -0700
+  
+SyntaxError (/Users/william_kennedy/Development/Projects/bingeapp/app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+<<<<<<< HEAD
+^~):
+  
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+Started POST "/user_shows" for ::1 at 2020-05-05 13:13:32 -0700
+  
+SyntaxError (/Users/william_kennedy/Development/Projects/bingeapp/app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+<<<<<<< HEAD
+^~):
+  
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+Started GET "/user_shows/3" for ::1 at 2020-05-05 13:13:32 -0700
+  
+SyntaxError (/Users/william_kennedy/Development/Projects/bingeapp/app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+<<<<<<< HEAD
+^~):
+  
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+Started GET "/user_shows/3" for ::1 at 2020-05-05 13:15:09 -0700
+  
+SyntaxError (/Users/william_kennedy/Development/Projects/bingeapp/app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+<<<<<<< HEAD
+^~):
+  
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+Started GET "/user_shows/3" for ::1 at 2020-05-05 13:15:28 -0700
+  
+SyntaxError (/Users/william_kennedy/Development/Projects/bingeapp/app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+<<<<<<< HEAD
+^~):
+  
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+app/controllers/user_shows_controller.rb:15: syntax error, unexpected <<
+Started GET "/user_shows/3" for ::1 at 2020-05-05 13:16:49 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.4ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 28ms (Views: 0.1ms | ActiveRecord: 5.1ms | Allocations: 9853)
+
+
+Started GET "/user_shows/3" for ::1 at 2020-05-05 13:16:55 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.1ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1269)
+
+
+Started GET "/user_shows/null" for ::1 at 2020-05-05 13:17:01 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"null"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 606)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=null):
+  
+app/controllers/user_shows_controller.rb:4:in `show'
+Started POST "/users" for ::1 at 2020-05-05 13:17:06 -0700
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"alexkenned", "location"=>"Seattle", "user"=>{"username"=>"alexkenned", "location"=>"Seattle"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "alexkenned"], ["location", "Seattle"], ["created_at", "2020-05-05 20:17:06.970967"], ["updated_at", "2020-05-05 20:17:06.970967"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "score" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["score", 0], ["updated_at", "2020-05-05 20:17:06.974597"], ["id", 4]]
+  ↳ app/controllers/users_controller.rb:21:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21:in `create'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.8ms | Allocations: 4631)
+
+
+Started GET "/user_shows/4" for ::1 at 2020-05-05 13:17:07 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.1ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1256)
+
+
+Started POST "/user_shows" for ::1 at 2020-05-05 13:17:11 -0700
+Processing by UserShowsController#create as */*
+  Parameters: {"user_id"=>"4", "api_id"=>123, "title"=>"Lost", "user_show"=>{"user_id"=>"4"}}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."api_id" = $1 LIMIT $2[0m  [["api_id", 123], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:16:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:17:in `create'
+Started POST "/user_shows" for ::1 at 2020-05-05 13:18:11 -0700
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_shows_controller.rb:26:in `create'
+  [1m[36mShow Create (0.7ms)[0m  [1m[32mINSERT INTO "shows" ("title", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Lost"], ["api_id", 123], ["created_at", "2020-05-05 20:18:11.670424"], ["updated_at", "2020-05-05 20:18:11.670424"]]
+  ↳ app/controllers/user_shows_controller.rb:26:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_shows_controller.rb:26:in `create'
+Processing by UserShowsController#create as */*
+  Parameters: {"user_id"=>"4", "api_id"=>123, "title"=>"Lost", "user_show"=>{"user_id"=>"4"}}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."api_id" = $1 LIMIT $2[0m  [["api_id", 123], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:16:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 2572ms (ActiveRecord: 0.7ms | Allocations: 14413)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/user_shows_controller.rb:19:in `create'
+Started GET "/user_shows/4" for ::1 at 2020-05-05 13:18:14 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (47.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.0ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 1], ["name", "Pilot (1)"], ["api_id", 10140], ["created_at", "2020-05-05 20:18:14.729032"], ["updated_at", "2020-05-05 20:18:14.729032"]]
+  [1m[36mUserShow Load (1.4ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 86ms (Views: 0.6ms | ActiveRecord: 48.7ms | Allocations: 632620)
+
+
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.0ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 2], ["name", "Pilot (2)"], ["api_id", 10141], ["created_at", "2020-05-05 20:18:14.788571"], ["updated_at", "2020-05-05 20:18:14.788571"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 3], ["name", "Tabula Rasa"], ["api_id", 10142], ["created_at", "2020-05-05 20:18:14.823711"], ["updated_at", "2020-05-05 20:18:14.823711"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 4], ["name", "Walkabout"], ["api_id", 10143], ["created_at", "2020-05-05 20:18:14.855256"], ["updated_at", "2020-05-05 20:18:14.855256"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (11.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 5], ["name", "White Rabbit"], ["api_id", 10144], ["created_at", "2020-05-05 20:18:14.894928"], ["updated_at", "2020-05-05 20:18:14.894928"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 6], ["name", "House of the Rising Sun"], ["api_id", 10145], ["created_at", "2020-05-05 20:18:14.927800"], ["updated_at", "2020-05-05 20:18:14.927800"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.9ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 7], ["name", "The Moth"], ["api_id", 10146], ["created_at", "2020-05-05 20:18:14.967810"], ["updated_at", "2020-05-05 20:18:14.967810"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (9.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 8], ["name", "Confidence Man"], ["api_id", 10147], ["created_at", "2020-05-05 20:18:15.003641"], ["updated_at", "2020-05-05 20:18:15.003641"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (2.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 9], ["name", "Solitary"], ["api_id", 10148], ["created_at", "2020-05-05 20:18:15.045418"], ["updated_at", "2020-05-05 20:18:15.045418"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 10], ["name", "Raised by Another"], ["api_id", 10149], ["created_at", "2020-05-05 20:18:15.098380"], ["updated_at", "2020-05-05 20:18:15.098380"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 11], ["name", "All the Best Cowboys Have Daddy Issues"], ["api_id", 10150], ["created_at", "2020-05-05 20:18:15.152303"], ["updated_at", "2020-05-05 20:18:15.152303"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 12], ["name", "Whatever the Case May Be"], ["api_id", 10151], ["created_at", "2020-05-05 20:18:15.192228"], ["updated_at", "2020-05-05 20:18:15.192228"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 13], ["name", "Hearts and Minds"], ["api_id", 10152], ["created_at", "2020-05-05 20:18:15.231746"], ["updated_at", "2020-05-05 20:18:15.231746"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 14], ["name", "Special"], ["api_id", 10153], ["created_at", "2020-05-05 20:18:15.273456"], ["updated_at", "2020-05-05 20:18:15.273456"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 15], ["name", "Homecoming"], ["api_id", 10154], ["created_at", "2020-05-05 20:18:15.314142"], ["updated_at", "2020-05-05 20:18:15.314142"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 16], ["name", "Outlaws"], ["api_id", 10155], ["created_at", "2020-05-05 20:18:15.353281"], ["updated_at", "2020-05-05 20:18:15.353281"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.0ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 17], ["name", "...In Translation"], ["api_id", 10156], ["created_at", "2020-05-05 20:18:15.392951"], ["updated_at", "2020-05-05 20:18:15.392951"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 18], ["name", "Numbers"], ["api_id", 10157], ["created_at", "2020-05-05 20:18:15.431645"], ["updated_at", "2020-05-05 20:18:15.431645"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 19], ["name", "Deus ex Machina"], ["api_id", 10158], ["created_at", "2020-05-05 20:18:15.462438"], ["updated_at", "2020-05-05 20:18:15.462438"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 20], ["name", "Do No Harm"], ["api_id", 10159], ["created_at", "2020-05-05 20:18:15.501868"], ["updated_at", "2020-05-05 20:18:15.501868"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 21], ["name", "The Greater Good"], ["api_id", 10160], ["created_at", "2020-05-05 20:18:15.541557"], ["updated_at", "2020-05-05 20:18:15.541557"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 22], ["name", "Born to Run"], ["api_id", 10161], ["created_at", "2020-05-05 20:18:15.581479"], ["updated_at", "2020-05-05 20:18:15.581479"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 23], ["name", "Exodus (1)"], ["api_id", 10162], ["created_at", "2020-05-05 20:18:15.620323"], ["updated_at", "2020-05-05 20:18:15.620323"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 24], ["name", "Exodus (2)"], ["api_id", 10163], ["created_at", "2020-05-05 20:18:15.660638"], ["updated_at", "2020-05-05 20:18:15.660638"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 1], ["number", 25], ["name", "Exodus (3)"], ["api_id", 10164], ["created_at", "2020-05-05 20:18:15.700946"], ["updated_at", "2020-05-05 20:18:15.700946"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 1], ["name", "Man of Science, Man of Faith"], ["api_id", 10165], ["created_at", "2020-05-05 20:18:15.740906"], ["updated_at", "2020-05-05 20:18:15.740906"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 2], ["name", "Adrift"], ["api_id", 10166], ["created_at", "2020-05-05 20:18:15.781269"], ["updated_at", "2020-05-05 20:18:15.781269"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 3], ["name", "Orientation"], ["api_id", 10167], ["created_at", "2020-05-05 20:18:15.818909"], ["updated_at", "2020-05-05 20:18:15.818909"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 4], ["name", "Everybody Hates Hugo"], ["api_id", 10168], ["created_at", "2020-05-05 20:18:15.851264"], ["updated_at", "2020-05-05 20:18:15.851264"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.0ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 5], ["name", "...And Found"], ["api_id", 10169], ["created_at", "2020-05-05 20:18:15.889514"], ["updated_at", "2020-05-05 20:18:15.889514"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 6], ["name", "Abandoned"], ["api_id", 10170], ["created_at", "2020-05-05 20:18:15.927837"], ["updated_at", "2020-05-05 20:18:15.927837"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 7], ["name", "The Other 48 Days"], ["api_id", 10171], ["created_at", "2020-05-05 20:18:15.965978"], ["updated_at", "2020-05-05 20:18:15.965978"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (7.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 8], ["name", "Collision"], ["api_id", 10172], ["created_at", "2020-05-05 20:18:16.003586"], ["updated_at", "2020-05-05 20:18:16.003586"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 9], ["name", "What Kate Did"], ["api_id", 10173], ["created_at", "2020-05-05 20:18:16.042011"], ["updated_at", "2020-05-05 20:18:16.042011"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 10], ["name", "The 23rd Psalm"], ["api_id", 10174], ["created_at", "2020-05-05 20:18:16.080410"], ["updated_at", "2020-05-05 20:18:16.080410"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 11], ["name", "The Hunting Party"], ["api_id", 10175], ["created_at", "2020-05-05 20:18:16.118202"], ["updated_at", "2020-05-05 20:18:16.118202"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 12], ["name", "Fire + Water"], ["api_id", 10176], ["created_at", "2020-05-05 20:18:16.156723"], ["updated_at", "2020-05-05 20:18:16.156723"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 13], ["name", "The Long Con"], ["api_id", 10177], ["created_at", "2020-05-05 20:18:16.195413"], ["updated_at", "2020-05-05 20:18:16.195413"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 14], ["name", "One of Them"], ["api_id", 10178], ["created_at", "2020-05-05 20:18:16.235143"], ["updated_at", "2020-05-05 20:18:16.235143"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 15], ["name", "Maternity Leave"], ["api_id", 10179], ["created_at", "2020-05-05 20:18:16.265126"], ["updated_at", "2020-05-05 20:18:16.265126"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.0ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 16], ["name", "The Whole Truth"], ["api_id", 10180], ["created_at", "2020-05-05 20:18:16.303417"], ["updated_at", "2020-05-05 20:18:16.303417"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 17], ["name", "Lockdown"], ["api_id", 10181], ["created_at", "2020-05-05 20:18:16.349890"], ["updated_at", "2020-05-05 20:18:16.349890"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 18], ["name", "Dave"], ["api_id", 10182], ["created_at", "2020-05-05 20:18:16.394938"], ["updated_at", "2020-05-05 20:18:16.394938"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 19], ["name", "S.O.S."], ["api_id", 10183], ["created_at", "2020-05-05 20:18:16.433282"], ["updated_at", "2020-05-05 20:18:16.433282"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 20], ["name", "Two for the Road"], ["api_id", 10184], ["created_at", "2020-05-05 20:18:16.469187"], ["updated_at", "2020-05-05 20:18:16.469187"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 21], ["name", "?"], ["api_id", 10185], ["created_at", "2020-05-05 20:18:16.507515"], ["updated_at", "2020-05-05 20:18:16.507515"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.9ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 22], ["name", "Three Minutes"], ["api_id", 10186], ["created_at", "2020-05-05 20:18:16.543864"], ["updated_at", "2020-05-05 20:18:16.543864"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 23], ["name", "Live Together, Die Alone (1)"], ["api_id", 10187], ["created_at", "2020-05-05 20:18:16.581202"], ["updated_at", "2020-05-05 20:18:16.581202"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 2], ["number", 24], ["name", "Live Together, Die Alone (2)"], ["api_id", 10188], ["created_at", "2020-05-05 20:18:16.619146"], ["updated_at", "2020-05-05 20:18:16.619146"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 1], ["name", "A Tale of Two Cities"], ["api_id", 10189], ["created_at", "2020-05-05 20:18:16.658015"], ["updated_at", "2020-05-05 20:18:16.658015"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.9ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 2], ["name", "The Glass Ballerina"], ["api_id", 10190], ["created_at", "2020-05-05 20:18:16.695496"], ["updated_at", "2020-05-05 20:18:16.695496"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 3], ["name", "Further Instructions"], ["api_id", 10191], ["created_at", "2020-05-05 20:18:16.726724"], ["updated_at", "2020-05-05 20:18:16.726724"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 4], ["name", "Every Man for Himself"], ["api_id", 10192], ["created_at", "2020-05-05 20:18:16.763869"], ["updated_at", "2020-05-05 20:18:16.763869"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 5], ["name", "The Cost of Living"], ["api_id", 10193], ["created_at", "2020-05-05 20:18:16.802618"], ["updated_at", "2020-05-05 20:18:16.802618"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 6], ["name", "I Do"], ["api_id", 10194], ["created_at", "2020-05-05 20:18:16.840779"], ["updated_at", "2020-05-05 20:18:16.840779"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 7], ["name", "Not in Portland"], ["api_id", 10195], ["created_at", "2020-05-05 20:18:16.878001"], ["updated_at", "2020-05-05 20:18:16.878001"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (6.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 8], ["name", "Flashes Before Your Eyes"], ["api_id", 10196], ["created_at", "2020-05-05 20:18:16.916234"], ["updated_at", "2020-05-05 20:18:16.916234"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 9], ["name", "Stranger in a Strange Land"], ["api_id", 10197], ["created_at", "2020-05-05 20:18:16.954289"], ["updated_at", "2020-05-05 20:18:16.954289"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 10], ["name", "Tricia Tanaka is Dead"], ["api_id", 10198], ["created_at", "2020-05-05 20:18:16.992330"], ["updated_at", "2020-05-05 20:18:16.992330"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 11], ["name", "Enter 77"], ["api_id", 10199], ["created_at", "2020-05-05 20:18:17.031396"], ["updated_at", "2020-05-05 20:18:17.031396"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 12], ["name", "Par Avion"], ["api_id", 10200], ["created_at", "2020-05-05 20:18:17.074760"], ["updated_at", "2020-05-05 20:18:17.074760"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.1ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 13], ["name", "The Man from Tallahassee"], ["api_id", 10201], ["created_at", "2020-05-05 20:18:17.116925"], ["updated_at", "2020-05-05 20:18:17.116925"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 14], ["name", "Exposé"], ["api_id", 10202], ["created_at", "2020-05-05 20:18:17.160087"], ["updated_at", "2020-05-05 20:18:17.160087"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (7.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 15], ["name", "Left Behind"], ["api_id", 10203], ["created_at", "2020-05-05 20:18:17.201433"], ["updated_at", "2020-05-05 20:18:17.201433"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.9ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 16], ["name", "One of Us"], ["api_id", 10204], ["created_at", "2020-05-05 20:18:17.236178"], ["updated_at", "2020-05-05 20:18:17.236178"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 17], ["name", "Catch-22"], ["api_id", 10205], ["created_at", "2020-05-05 20:18:17.281481"], ["updated_at", "2020-05-05 20:18:17.281481"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 18], ["name", "D.O.C."], ["api_id", 10206], ["created_at", "2020-05-05 20:18:17.321339"], ["updated_at", "2020-05-05 20:18:17.321339"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 19], ["name", "The Brig"], ["api_id", 10207], ["created_at", "2020-05-05 20:18:17.363285"], ["updated_at", "2020-05-05 20:18:17.363285"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.0ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 20], ["name", "The Man Behind the Curtain"], ["api_id", 10208], ["created_at", "2020-05-05 20:18:17.406838"], ["updated_at", "2020-05-05 20:18:17.406838"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 21], ["name", "Greatest Hits"], ["api_id", 10209], ["created_at", "2020-05-05 20:18:17.445722"], ["updated_at", "2020-05-05 20:18:17.445722"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (7.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.9ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 22], ["name", "Through the Looking Glass (1)"], ["api_id", 10210], ["created_at", "2020-05-05 20:18:17.485897"], ["updated_at", "2020-05-05 20:18:17.485897"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 3], ["number", 23], ["name", "Through the Looking Glass (2)"], ["api_id", 10211], ["created_at", "2020-05-05 20:18:17.526055"], ["updated_at", "2020-05-05 20:18:17.526055"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.0ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 1], ["name", "The Beginning of the End"], ["api_id", 10212], ["created_at", "2020-05-05 20:18:17.567454"], ["updated_at", "2020-05-05 20:18:17.567454"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 2], ["name", "Confirmed Dead"], ["api_id", 10213], ["created_at", "2020-05-05 20:18:17.609974"], ["updated_at", "2020-05-05 20:18:17.609974"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 3], ["name", "The Economist"], ["api_id", 10214], ["created_at", "2020-05-05 20:18:17.652544"], ["updated_at", "2020-05-05 20:18:17.652544"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 4], ["name", "Eggtown"], ["api_id", 10215], ["created_at", "2020-05-05 20:18:17.693766"], ["updated_at", "2020-05-05 20:18:17.693766"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 5], ["name", "The Constant"], ["api_id", 10216], ["created_at", "2020-05-05 20:18:17.734463"], ["updated_at", "2020-05-05 20:18:17.734463"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 6], ["name", "The Other Woman"], ["api_id", 10217], ["created_at", "2020-05-05 20:18:17.776325"], ["updated_at", "2020-05-05 20:18:17.776325"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.9ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 7], ["name", "Ji Yeon"], ["api_id", 10218], ["created_at", "2020-05-05 20:18:17.817648"], ["updated_at", "2020-05-05 20:18:17.817648"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 8], ["name", "Meet Kevin Johnson"], ["api_id", 10219], ["created_at", "2020-05-05 20:18:17.859762"], ["updated_at", "2020-05-05 20:18:17.859762"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 9], ["name", "The Shape of Things to Come"], ["api_id", 10220], ["created_at", "2020-05-05 20:18:17.894927"], ["updated_at", "2020-05-05 20:18:17.894927"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 10], ["name", "Something Nice Back Home"], ["api_id", 10221], ["created_at", "2020-05-05 20:18:17.937442"], ["updated_at", "2020-05-05 20:18:17.937442"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 11], ["name", "Cabin Fever"], ["api_id", 10222], ["created_at", "2020-05-05 20:18:17.981203"], ["updated_at", "2020-05-05 20:18:17.981203"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.0ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 12], ["name", "There's No Place Like Home (1)"], ["api_id", 10223], ["created_at", "2020-05-05 20:18:18.023574"], ["updated_at", "2020-05-05 20:18:18.023574"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 13], ["name", "There's No Place Like Home (2)"], ["api_id", 10224], ["created_at", "2020-05-05 20:18:18.071648"], ["updated_at", "2020-05-05 20:18:18.071648"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.0ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 4], ["number", 14], ["name", "There's No Place Like Home (3)"], ["api_id", 10225], ["created_at", "2020-05-05 20:18:18.118359"], ["updated_at", "2020-05-05 20:18:18.118359"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 1], ["name", "Because You Left"], ["api_id", 10226], ["created_at", "2020-05-05 20:18:18.159659"], ["updated_at", "2020-05-05 20:18:18.159659"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (7.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 2], ["name", "The Lie"], ["api_id", 10227], ["created_at", "2020-05-05 20:18:18.204643"], ["updated_at", "2020-05-05 20:18:18.204643"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.3ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 3], ["name", "Jughead"], ["api_id", 10228], ["created_at", "2020-05-05 20:18:18.245218"], ["updated_at", "2020-05-05 20:18:18.245218"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.2ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 4], ["name", "The Little Prince"], ["api_id", 10229], ["created_at", "2020-05-05 20:18:18.287667"], ["updated_at", "2020-05-05 20:18:18.287667"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.0ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 5], ["name", "This Place is Death"], ["api_id", 10230], ["created_at", "2020-05-05 20:18:18.329795"], ["updated_at", "2020-05-05 20:18:18.329795"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 6], ["name", "316"], ["api_id", 10231], ["created_at", "2020-05-05 20:18:18.374508"], ["updated_at", "2020-05-05 20:18:18.374508"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.9ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 7], ["name", "The Life and Death of Jeremy Bentham"], ["api_id", 10232], ["created_at", "2020-05-05 20:18:18.412897"], ["updated_at", "2020-05-05 20:18:18.412897"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.0ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 8], ["name", "LaFleur"], ["api_id", 10233], ["created_at", "2020-05-05 20:18:18.453623"], ["updated_at", "2020-05-05 20:18:18.453623"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 9], ["name", "Namaste"], ["api_id", 10234], ["created_at", "2020-05-05 20:18:18.494238"], ["updated_at", "2020-05-05 20:18:18.494238"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 10], ["name", "He's Our You"], ["api_id", 10235], ["created_at", "2020-05-05 20:18:18.534084"], ["updated_at", "2020-05-05 20:18:18.534084"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.9ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 11], ["name", "Whatever Happened, Happened"], ["api_id", 10236], ["created_at", "2020-05-05 20:18:18.571596"], ["updated_at", "2020-05-05 20:18:18.571596"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.5ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 12], ["name", "Dead is Dead"], ["api_id", 10237], ["created_at", "2020-05-05 20:18:18.610089"], ["updated_at", "2020-05-05 20:18:18.610089"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 13], ["name", "Some Like It Hoth"], ["api_id", 10238], ["created_at", "2020-05-05 20:18:18.648265"], ["updated_at", "2020-05-05 20:18:18.648265"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 14], ["name", "The Variable"], ["api_id", 10239], ["created_at", "2020-05-05 20:18:18.682151"], ["updated_at", "2020-05-05 20:18:18.682151"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 15], ["name", "Follow the Leader"], ["api_id", 10240], ["created_at", "2020-05-05 20:18:18.721893"], ["updated_at", "2020-05-05 20:18:18.721893"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 16], ["name", "The Incident (1)"], ["api_id", 10241], ["created_at", "2020-05-05 20:18:18.763435"], ["updated_at", "2020-05-05 20:18:18.763435"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 5], ["number", 17], ["name", "The Incident (2)"], ["api_id", 10242], ["created_at", "2020-05-05 20:18:18.808378"], ["updated_at", "2020-05-05 20:18:18.808378"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 1], ["name", "LA X (1)"], ["api_id", 10243], ["created_at", "2020-05-05 20:18:18.873106"], ["updated_at", "2020-05-05 20:18:18.873106"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 2], ["name", "LA X (2)"], ["api_id", 10244], ["created_at", "2020-05-05 20:18:18.924401"], ["updated_at", "2020-05-05 20:18:18.924401"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 3], ["name", "What Kate Does"], ["api_id", 10245], ["created_at", "2020-05-05 20:18:18.965041"], ["updated_at", "2020-05-05 20:18:18.965041"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 4], ["name", "The Substitute"], ["api_id", 10246], ["created_at", "2020-05-05 20:18:19.005330"], ["updated_at", "2020-05-05 20:18:19.005330"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 5], ["name", "Lighthouse"], ["api_id", 10247], ["created_at", "2020-05-05 20:18:19.044639"], ["updated_at", "2020-05-05 20:18:19.044639"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 6], ["name", "Sundown"], ["api_id", 10248], ["created_at", "2020-05-05 20:18:19.083905"], ["updated_at", "2020-05-05 20:18:19.083905"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (6.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 7], ["name", "Dr. Linus"], ["api_id", 10249], ["created_at", "2020-05-05 20:18:19.121358"], ["updated_at", "2020-05-05 20:18:19.121358"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 8], ["name", "Recon"], ["api_id", 10250], ["created_at", "2020-05-05 20:18:19.158860"], ["updated_at", "2020-05-05 20:18:19.158860"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 9], ["name", "Ab Aeterno"], ["api_id", 10251], ["created_at", "2020-05-05 20:18:19.196197"], ["updated_at", "2020-05-05 20:18:19.196197"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 10], ["name", "The Package"], ["api_id", 10252], ["created_at", "2020-05-05 20:18:19.233926"], ["updated_at", "2020-05-05 20:18:19.233926"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 11], ["name", "Happily Ever After"], ["api_id", 10253], ["created_at", "2020-05-05 20:18:19.271488"], ["updated_at", "2020-05-05 20:18:19.271488"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 12], ["name", "Everybody Loves Hugo"], ["api_id", 10254], ["created_at", "2020-05-05 20:18:19.308610"], ["updated_at", "2020-05-05 20:18:19.308610"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 13], ["name", "The Last Recruit"], ["api_id", 10255], ["created_at", "2020-05-05 20:18:19.346036"], ["updated_at", "2020-05-05 20:18:19.346036"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 14], ["name", "The Candidate"], ["api_id", 10256], ["created_at", "2020-05-05 20:18:19.383794"], ["updated_at", "2020-05-05 20:18:19.383794"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.8ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 15], ["name", "Across the Sea"], ["api_id", 10257], ["created_at", "2020-05-05 20:18:19.420877"], ["updated_at", "2020-05-05 20:18:19.420877"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.7ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 16], ["name", "What They Died For"], ["api_id", 10258], ["created_at", "2020-05-05 20:18:19.457938"], ["updated_at", "2020-05-05 20:18:19.457938"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (1.0ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 17], ["name", "The End (1)"], ["api_id", 10259], ["created_at", "2020-05-05 20:18:19.496433"], ["updated_at", "2020-05-05 20:18:19.496433"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[36mEpisode Create (0.9ms)[0m  [1m[32mINSERT INTO "episodes" ("show_id", "season", "number", "name", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["show_id", 2], ["season", 6], ["number", 18], ["name", "The End (2)"], ["api_id", 10260], ["created_at", "2020-05-05 20:18:19.534920"], ["updated_at", "2020-05-05 20:18:19.534920"]]
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/show.rb:11:in `block in populate'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_shows_controller.rb:28:in `create'
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:28:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:28:in `create'
+  [1m[36mUserShow Create (0.7ms)[0m  [1m[32mINSERT INTO "user_shows" ("show_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["show_id", 2], ["user_id", 4], ["created_at", "2020-05-05 20:18:19.657575"], ["updated_at", "2020-05-05 20:18:19.657575"]]
+  ↳ app/controllers/user_shows_controller.rb:28:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_shows_controller.rb:28:in `create'
+Completed 200 OK in 68056ms (Views: 2.0ms | ActiveRecord: 377.8ms | Allocations: 40550558)
+
+
+Started GET "/user_shows/4" for ::1 at 2020-05-05 13:18:19 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.9ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (1.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 57ms (Views: 1.1ms | ActiveRecord: 2.8ms | Allocations: 418585)
+
+
+Started GET "/user_shows/4" for ::1 at 2020-05-05 13:18:28 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.7ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 56ms (Views: 1.1ms | ActiveRecord: 2.0ms | Allocations: 481051)
+
+
+Started POST "/user_shows" for ::1 at 2020-05-05 13:18:38 -0700
+Processing by UserShowsController#create as */*
+  Parameters: {"user_id"=>"4", "api_id"=>431, "title"=>"Friends", "user_show"=>{"user_id"=>"4"}}
+  [1m[36mShow Load (0.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."api_id" = $1 LIMIT $2[0m  [["api_id", 431], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:16:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:17:in `create'
+  [1m[36mShow Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "shows" INNER JOIN "user_shows" ON "shows"."id" = "user_shows"."show_id" WHERE "user_shows"."user_id" = $1 AND "shows"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_shows_controller.rb:23:in `create'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:23:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:23:in `create'
+  [1m[36mUserShow Create (0.2ms)[0m  [1m[32mINSERT INTO "user_shows" ("show_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["show_id", 1], ["user_id", 4], ["created_at", "2020-05-05 20:18:45.789968"], ["updated_at", "2020-05-05 20:18:45.789968"]]
+  ↳ app/controllers/user_shows_controller.rb:23:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_shows_controller.rb:23:in `create'
+Completed 200 OK in 7335ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 237051)
+
+
+Started GET "/user_shows/4" for ::1 at 2020-05-05 13:18:45 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.1ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 3192)
+
+
+Started GET "/episodes/1" for ::1 at 2020-05-05 13:18:59 -0700
+Processing by EpisodesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/episodes_controller.rb:6:in `show'
+  [1m[36mEpisode Load (0.6ms)[0m  [1m[34mSELECT "episodes".* FROM "episodes" WHERE "episodes"."show_id" = $1[0m  [["show_id", 1]]
+  ↳ app/controllers/episodes_controller.rb:8:in `show'
+Completed 200 OK in 66ms (Views: 44.8ms | ActiveRecord: 8.8ms | Allocations: 45262)
+
+
+Started GET "/user_shows/4" for ::1 at 2020-05-05 13:19:06 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.1ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 23ms (Views: 0.1ms | ActiveRecord: 4.7ms | Allocations: 12561)
+
+
+Started GET "/episodes/2" for ::1 at 2020-05-05 13:19:08 -0700
+Processing by EpisodesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/episodes_controller.rb:6:in `show'
+  [1m[36mEpisode Load (0.3ms)[0m  [1m[34mSELECT "episodes".* FROM "episodes" WHERE "episodes"."show_id" = $1[0m  [["show_id", 2]]
+  ↳ app/controllers/episodes_controller.rb:8:in `show'
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.5ms | Allocations: 18130)
+
+
+Started GET "/user_shows/4" for ::1 at 2020-05-05 13:21:19 -0700
+Processing by UserShowsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:4:in `show'
+  [1m[36mUserShow Load (0.2ms)[0m  [1m[34mSELECT "user_shows".* FROM "user_shows" WHERE "user_shows"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_shows_controller.rb:6:in `show'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 3192)
+
+
+Started GET "/episodes/2" for ::1 at 2020-05-05 13:22:39 -0700
+Processing by EpisodesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/episodes_controller.rb:6:in `show'
+  [1m[36mEpisode Load (0.3ms)[0m  [1m[34mSELECT "episodes".* FROM "episodes" WHERE "episodes"."show_id" = $1[0m  [["show_id", 2]]
+  ↳ app/controllers/episodes_controller.rb:8:in `show'
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.5ms | Allocations: 18130)
+
+
