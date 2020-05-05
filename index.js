@@ -224,7 +224,7 @@ if (!sessionStorage.getItem("user")){
     })
     .then(response => response.json())
     .then(data => {
-      signedinuser=data
+      sessionStorage.setItem("user", data.id)
       console.log('Success:', data)
       start()
     })
