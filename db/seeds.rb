@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# u1= User.create(username: "Sara", location: "Seattle", score: 0)
+ u1= User.create(username: "Sara", location: "Seattle", score: 0)
 # u2= User.create(username: "Gabriel", location: "Seattle", score: 0)
 # u3= User.create(username: "Aman", location: "Seattle", score: 0)
 u4= User.create(username: "Will", location: "Seattle", score: 0)
