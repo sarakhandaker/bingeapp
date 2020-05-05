@@ -2,6 +2,7 @@ const form = document.getElementsByClassName("input-group")[0]
 const myshowbtn= document.getElementById("my-shows")
 const parent = document.getElementById("show")
 const searchResults = document.getElementsByClassName("div search-result")[0]
+const logoutbtn=document.getElementById("logout")
 
 myshowbtn.addEventListener("click", event => showUserShows())
 form.addEventListener("submit", event => handleSearch(event))
@@ -61,12 +62,10 @@ function makeCard(title) {
 }
 
 //TO DO
-//change user_id from 1 to current user
 function handleFollow(e,object){ 
-  console.log(object)
-  let data ={ "user_id": 1,
-                  "api_id": object.id,
-                  "title": object.name
+  let data ={ "user_id": sessionStorage.getItem("user"),
+                  "api_id": object.show.id,
+                  "title": object.show.name
                   }
       fetch('http://localhost:8008/user_shows', {
         method: 'POST',
@@ -89,7 +88,7 @@ function handleFollow(e,object){
 //send a user eventually...
 function showUserShows() {
   parent.innerText = ""
-  fetch('http://localhost:8008/user_shows/1')
+  fetch(`http://localhost:3000/user_shows/${sessionStorage.getItem("user")}`)
   .then(resp=> resp.json())
   .then(resp=>{
     resp.forEach(usershow => getAPIshow(usershow))})
@@ -174,4 +173,85 @@ episodes.forEach(ep => {
   li.innerText=`name: ${ep.name}- season: ${ep.season}`
   div.appendChild(li)
 })
+}
+
+//USER LOGIN STUFF
+start()
+function start() {
+//IF NOT SIGNED IN SHOW LOGIN HTML
+if (!sessionStorage.getItem("user")){
+  let body=document.getElementsByTagName('body')[0]
+  body.innerText=""
+  let loginbtn=document.createElement('button')
+  loginbtn.innerText="LOGIN"
+  let signupbtn=document.createElement('button')
+  signupbtn.innerText="SIGNUP"
+  body.append(loginbtn,signupbtn)
+  signupbtn.addEventListener('click', ()=> signuporlogin(event, true))
+  loginbtn.addEventListener('click', ()=> signuporlogin(event, false))
+}
+
+//SIGN UP
+  function signuporlogin(event, signup){
+    let body=document.getElementsByTagName('body')[0]
+    body.innerHTML=""
+    let form=document.createElement("form")
+    form.innerHTML=  `<label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label for="uname"><b>Location</b></label>
+    <input type="text" placeholder="Enter Location" name="location" required>
+    <button type="submit">Signup</button>`
+    body.append(form)
+    form.addEventListener('submit', (event)=>{
+      event.preventDefault()
+      let username=event.target.uname.value
+      let location=event.target.location.value
+      signup? makeUser(username, location): findUser(username, location)
+    })
+  }
+
+  function makeUser(uname, loc){
+    const data = { username: uname, 
+                  location: loc };
+                 
+    fetch('http://localhost:3000/users', {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+      sessionStorage.setItem("user", data.id)
+      console.log(data, sessionStorage.getItem("user"))
+      console.log('Success:', data)
+      location.reload()
+    })
+    .catch((error) => {
+      console.error('Error:', error)
+})
+  }
+
+  function findUser(uname, loc){
+    fetch('http://localhost:3000/users')
+    .then(resp=> resp.json())
+    .then(resp=>{
+      user=resp.find(user => user.username==uname && user.location==loc)
+      if (user)
+      {
+        sessionStorage.setItem("user", user.id)
+        location.reload()
+      }
+      else {
+        location.reload()
+      }
+    })
+  }
+
+logoutbtn.addEventListener("click", () => {
+  sessionStorage.clear()
+  location.reload()
+} 
+)
 }
