@@ -14,32 +14,49 @@ function handleSearch(e) {
   e.preventDefault()
   fetch(`http://api.tvmaze.com/search/shows?q=${e.target.title.value}`)
   .then(resp => resp.json())
-  .then(resp=> {parent.innerText = ""
-    resp.forEach( title =>makeCard(title))
+  .then(resp => {parent.innerText = ""
+    getTitles(resp)
 })
+  .catch((error) => {
+    console.error('Error:', error);
+  })
+}
+
+function getTitles(titles) {
+  const newtitles= titles.map (title => title)
+  
+  newtitles.forEach(title =>makeCard(title))
+  
 }
 
 //HANDLE CASE OF NO IMAGE AVAILABLE
 function makeCard(title) {
+  console.log(title)
   let card = document.createElement('div')
   card.className = "col-md-4 card-tvshow"
   let div1=document.createElement('div')
   div1.className="container-fluid"
   let div2=document.createElement('div')
   div2.className="row"
-  div2.innerHTML =`
-        <div class="col-sm-12 cardimage">
-          <img src="${title.show.image.original}" alt="">
-        </div>`
+  if (title.show.image.original){
+    div2.innerHTML =`
+          <div class="col-sm-12 cardimage">
+            <img src="${title.show.image.original}" alt="">
+          </div>`
+  }
+
   let div3=document.createElement('div')
   div3.className="container information-box"
   let div4=document.createElement('div')
   div4.className="row"
+
+  if (title.show.name && title.show.network.name && title.show.premiered){
   div4.innerHTML =`
       <div class="col-sm-6 information-left">
         <h3>${title.show.name}</h3>
         <h6>${title.show.network.name} - ${title.show.premiered}</h6>
       </div>`
+  }
 
   let follow=document.createElement('div')
   follow.className="col-sm-6 information-right"
@@ -142,14 +159,14 @@ function makeusercards(title, usershow){
   card.appendChild(div1)
   parent.appendChild(card)
   info.addEventListener('click',event => showInfo(title, usershow))
-  follow.addEventListener('click', event => handleDelete(usershow))
+  follow.addEventListener('click', event => handleDelete(usershow, card))
 }
 
-function handleDelete(usershow){
+function handleDelete(usershow, card){
       fetch(`http://localhost:3000/user_shows/${usershow.id}`, {
         method: 'DELETE',
       })
-      .then(showUserShows()) 
+      .then(card.remove()) 
 }
 
 function showInfo(title, usershow){
@@ -251,7 +268,6 @@ logoutbtn.addEventListener("click", () => {
 } 
 )
 const collapseParent = document.getElementById("collapseExample")
-const epiDiv = document.getElementById("episodeee")
 
 // function buildShowCard(show) {
 //   let showCardBody = document.createElement('div')
@@ -328,7 +344,7 @@ function buildBetterEpisodeCards(title, episodes) {
   imgDiv.className = "col-md-12 episode-image"
   div3.appendChild(imgDiv)
   let img = document.createElement('img')
-  img.src = `${title.image.original}`
+  img.src = `${episode.image_url}`
   imgDiv.appendChild(img)
 
   let infoDiv = document.createElement('div')
