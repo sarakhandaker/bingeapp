@@ -124,7 +124,7 @@ function makeusercards(title, usershow){
   follow.innerHTML =`
         <div class="">
           <div class="follow" style= "cursor: pointer">
-              X
+          <span class="remove"> <img id="remove" src="img/delete.png" alt=""> </span>
         </div>`
   let info=document.createElement('div')
   info.className="col-sm-6 information-right"
@@ -332,7 +332,9 @@ function buildBetterEpisodeCards(title, episodes) {
   imgDiv.appendChild(img)
 
   let infoDiv = document.createElement('div')
-  infoDiv.className = "container episode-title"
+  infoDiv.className = "episode-title"
+  // infoDiv.className = "col-sm-12 watched"
+  // icon.innerHTML = ` <img src="img/interface (1).png" alt="">`
 
   if (newresp.includes(episode.id)){
     infoDiv.classList.toggle("seen")
@@ -349,8 +351,8 @@ function buildBetterEpisodeCards(title, episodes) {
   infoDiv.appendChild(airh6)
 
   let icon = document.createElement('div')
-  icon.className = "col-md-3 watched"
-  icon.innerHTML = ` <img src="img/interface (1).png" alt="">`
+  icon.className = "col-sm-12 watched"
+  icon.innerHTML = ` <img src="img/hide.png" alt="">`
   div3.appendChild(icon)
   icon.addEventListener('click', ()=> handleSeen(event, episode, infoDiv))
 
@@ -372,6 +374,7 @@ function handleSeen (event, episode, infoDiv) {
   .then(response => response.json())
   .then(data => {
   infoDiv.classList.toggle("seen")
+  infoDiv.nextSibling.getElementsByTagName("img")[0].src="img/visibility-button.png"
   console.log(infoDiv)
   console.log('Success:', data);
   })
