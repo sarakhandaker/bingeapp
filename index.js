@@ -3,11 +3,17 @@ const myshowbtn= document.getElementById("my-shows")
 const parent = document.getElementById("show")
 const searchResults = document.getElementsByClassName("div search-result")[0]
 const logoutbtn=document.getElementById("logout")
-
-myshowbtn.addEventListener("click", event => showUserShows())
-searchForm.addEventListener("submit", event => handleSearch(event))
+const collapseParent = document.getElementById("collapseExample")
 
 showUserShows()
+
+myshowbtn.addEventListener("click", () => {
+  collapseParent.classList.add('hidden')
+  showUserShows()})
+searchForm.addEventListener("submit", event => {
+  collapseParent.classList.add('hidden')
+  handleSearch(event)
+})
 
 //handles the search bar input
 function handleSearch(e) {
@@ -15,18 +21,15 @@ function handleSearch(e) {
   fetch(`http://api.tvmaze.com/search/shows?q=${e.target.title.value}`)
   .then(resp => resp.json())
   .then(resp => {parent.innerText = ""
-    getTitles(resp)
+  console.log(resp)
+    resp.forEach(title => {
+    console.log(title)
+     makeCard(title)
+  })
 })
   .catch((error) => {
     console.error('Error:', error);
   })
-}
-
-function getTitles(titles) {
-  const newtitles= titles.map (title => title)
-  
-  newtitles.forEach(title =>makeCard(title))
-  
 }
 
 //HANDLE CASE OF NO IMAGE AVAILABLE
@@ -38,10 +41,16 @@ function makeCard(title) {
   div1.className="container-fluid"
   let div2=document.createElement('div')
   div2.className="row"
-  if (title.show.image.original){
+  if (title.show.image){
     div2.innerHTML =`
           <div class="col-sm-12 cardimage">
             <img src="${title.show.image.original}" alt="">
+          </div>`
+  }
+  else {
+    div2.innerHTML =`
+          <div class="col-sm-12 cardimage">
+            <img src="img/tv-2268952_1280.png" alt="">
           </div>`
   }
 
@@ -50,13 +59,19 @@ function makeCard(title) {
   let div4=document.createElement('div')
   div4.className="row"
 
-  if (title.show.name && title.show.network.name && title.show.premiered){
+  if (title.show.network && title.show.premiered){
   div4.innerHTML =`
       <div class="col-sm-6 information-left">
         <h3>${title.show.name}</h3>
         <h6>${title.show.network.name} - ${title.show.premiered}</h6>
       </div>`
   }
+  else{
+    div4.innerHTML =`
+        <div class="col-sm-6 information-left">
+          <h3>${title.show.name}</h3>
+        </div>`
+    }
 
   let follow=document.createElement('div')
   follow.className="col-sm-6 information-right"
@@ -99,7 +114,6 @@ function handleFollow(e,object){
       
 }
 
-//send a user eventually...
 function showUserShows() {
   parent.innerText = ""
   fetch(`http://localhost:3000/user_shows/${sessionStorage.getItem("user")}`)
@@ -170,6 +184,7 @@ function handleDelete(usershow, card){
 }
 
 function showInfo(title, usershow){
+  collapseParent.classList.remove('hidden')
   parent.innerText = ""
   makeusercards(title)
   buildBetterShowCard(title)
@@ -267,37 +282,6 @@ logoutbtn.addEventListener("click", () => {
   location.reload()
 } 
 )
-const collapseParent = document.getElementById("collapseExample")
-
-// function buildShowCard(show) {
-//   let showCardBody = document.createElement('div')
-//   showCardBody.className = "card-body"
-//   showCardBody.id = "all-informations"
-
-//   let infoDiv = document.createElement('div')
-//   infoDiv.className = "col-sm-6 informations-one"
-
-//   let infoH3 = document.createElement('h3')
-//   infoH3.innerText = `${show.name}`
-
-//   let infoH6 = document.createElement('h6')
-//   infoH6.innerText = `${show.network.name}`
-
-//   let summaryDiv = document.createElement('div')
-//   summaryDiv.className = "col-sm-12"
-
-//   let summaryP = document.createElement('p')
-//   summaryP.innerHTML = `${show.summary}`
-
-//   //collapseParent.innerText = ""
-//   collapseParent.appendChild(showCardBody)
-//   showCardBody.appendChild(infoDiv)
-//   infoDiv.appendChild(infoH3)
-//   infoDiv.appendChild(infoH6)
-//   showCardBody.appendChild(summaryDiv)
-//   summaryDiv.appendChild(summaryP)
-  
-// }
 
 function buildBetterShowCard(show) {
   let showName = document.getElementById("showName")
@@ -307,10 +291,7 @@ function buildBetterShowCard(show) {
   showNetwork.innerText = `${show.network.name}`
 
   let showSummary = document.getElementById("showSummary")
-  showSummary.innerHTML = 
-  `
-  ${show.summary}
-  `
+  showSummary.innerHTML = `${show.summary}`
 
   let showAired = document.getElementById("showAired")
   showAired.innerText = `${show.premiered}`
@@ -375,56 +356,31 @@ function buildBetterEpisodeCards(title, episodes) {
 
 
 function handleSeen (event, episode, infoDiv) {
-  let data ={ "user_id": sessionStorage.getItem("user"),
-  "episode_id": episode.id
+  if (!infoDiv.classList.contains("seen")){
+    let data ={ "user_id": sessionStorage.getItem("user"),
+    "episode_id": episode.id
+    }
+    fetch('http://localhost:3000/user_episodes', {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+    infoDiv.classList.toggle("seen")
+    console.log(infoDiv)
+    console.log('Success:', data);
+    })
+    .catch((error) => {
+    console.error('Error:', error);
+    })
   }
-  fetch('http://localhost:3000/user_episodes', {
-  method: 'POST',
-  headers: {
-  'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data),
-  })
-  .then(response => response.json())
-  .then(data => {
-  infoDiv.classList.toggle("seen")
-  console.log(infoDiv)
-  console.log('Success:', data);
-  })
-  .catch((error) => {
-  console.error('Error:', error);
-  })
+  else {
+    infoDiv.classList.toggle("seen")
+  }
 }
-
-// function buildEpisodeCards(episodes) {
-//   episodes.forEach(episode => {
-
-//   let div1 = document.createElement('div')
-//   div1.className = "container-fluid"
-//   epiDiv.appendChild(div1)
-//   collapseParent.appendChild(epiDiv)
-
-//   let div2 = document.createElement('div')
-//   div2.className = "row"
-//   div1.appendChild(div2)
-
-//   // let imgDiv = document.createElement('div')
-//   // imgDiv.className = "col-md-12 episode-image"
-//   // imgDiv.innerHTML = `<img src="${episode.image.original}" alt="">`
-//   // div2.appendChild(imgDiv)
-
-//   let infoDiv = document.createElement('div')
-//   infoDiv.className = "col-md-9 episode-title"
-//   infoDiv.innerHTML = 
-//   `
-//   <h5>${episode.name}</h5>
-//   <h6>${episode.airdate}</h6>
-//   `
-//   div2.appendChild(infoDiv)
-//  })
-// }
-
-
 
 //_____________TO DO__________________
 //add episode info(img, airdate) to db

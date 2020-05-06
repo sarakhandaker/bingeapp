@@ -209,3 +209,6 @@ padding: 50px;
   color: #0f770f !important;
 }
 
+.hidden {
+  display: none;
+}
