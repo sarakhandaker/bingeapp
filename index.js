@@ -117,16 +117,6 @@ function makeusercards(title, usershow){
         <h3>${title.name}</h3>
         <h6>${title.network.name} - ${title.premiered}</h6>
         <img src="img/seo-and-web.png" alt="">
-<<<<<<< HEAD
-      </div>
-      <div class="col-sm-6 information-right">
-      <div class="follow">
-      <a href="#">
-        <span class="remove"> <img id="remove" src="img/delete.png" alt=""> </span>
-      </a>
-    </div>
-      
-=======
       </div>`
 
   let follow=document.createElement('div')
@@ -134,12 +124,11 @@ function makeusercards(title, usershow){
   follow.innerHTML =`
         <div class="">
           <div class="follow" style= "cursor: pointer">
-              X
+          <span class="remove"> <img id="remove" src="img/delete.png" alt=""> </span>
         </div>`
   let info=document.createElement('div')
   info.className="col-sm-6 information-right"
   info.innerHTML =`     
->>>>>>> baa53c8f0dd76f7e35774016caf45295060dceea
       <div class="information-button">
         <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
           <img src="img/Information.png" alt="">
@@ -343,7 +332,9 @@ function buildBetterEpisodeCards(title, episodes) {
   imgDiv.appendChild(img)
 
   let infoDiv = document.createElement('div')
-  infoDiv.className = "container episode-title"
+  infoDiv.className = "episode-title"
+  // infoDiv.className = "col-sm-12 watched"
+  // icon.innerHTML = ` <img src="img/interface (1).png" alt="">`
 
   if (newresp.includes(episode.id)){
     infoDiv.classList.toggle("seen")
@@ -360,8 +351,8 @@ function buildBetterEpisodeCards(title, episodes) {
   infoDiv.appendChild(airh6)
 
   let icon = document.createElement('div')
-  icon.className = "col-md-3 watched"
-  icon.innerHTML = ` <img src="img/interface (1).png" alt="">`
+  icon.className = "col-sm-12 watched"
+  icon.innerHTML = ` <img src="img/hide.png" alt="">`
   div3.appendChild(icon)
   icon.addEventListener('click', ()=> handleSeen(event, episode, infoDiv))
 
@@ -383,6 +374,7 @@ function handleSeen (event, episode, infoDiv) {
   .then(response => response.json())
   .then(data => {
   infoDiv.classList.toggle("seen")
+  infoDiv.nextSibling.getElementsByTagName("img")[0].src="img/visibility-button.png"
   console.log(infoDiv)
   console.log('Success:', data);
   })

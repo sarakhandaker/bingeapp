@@ -114,8 +114,7 @@ padding: 50px;
     }
     #all-informations{
       background-color: #133B63;
-      padding-right: 300px;
-      padding-left: 300px;
+      
     }
     .informations-one h3{
       color: #FA6600;
@@ -169,11 +168,11 @@ padding: 50px;
   border: solid #FA6600;
   border-width:3px;
   padding: 0px  !important;
-  margin-top: 50px;
+  margin: 15px !important;
 
 }
 .episode-image{
-  width: 100%;
+  
   padding: 0px;
   padding: 0px !important;
 }
@@ -183,8 +182,8 @@ padding: 50px;
   padding: 0px !important;
 }
 .episode-title {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 0px !important;
+
 }
 .episode-title h5{
   font-size: 14px;
@@ -197,15 +196,20 @@ padding: 50px;
 
 .watched {
   border: solid #FA6600;
-  border-radius: 10px 0px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
   text-align: center;
   float: right;
   margin-top: 30px;
-  padding-top: 15px;
+  border-top: 5px solid #FA6600;
+  
+  
   
 }
 
-<<<<<<< HEAD
+.watched img{
+  size: 30px !important;
+}
+
 
 body {
   background: #133B63;
@@ -388,9 +392,7 @@ a {
 
 
 
-=======
 .seen > h5 {
   color: #0f770f !important;
 }
 
->>>>>>> baa53c8f0dd76f7e35774016caf45295060dceea
