@@ -3,14 +3,14 @@ TV Binge App
 User Stores
 
 Basic MVP 
-Create an account (C)
-Login to your account (R)
+//Create an account (C)
+//Login to your account (R)
 Edit your account (U)
-Save their shows ©
-See your list of shows
-Edit your list of shows (U)
+//Save their shows ©
+//See your list of shows
+//Edit your list of shows (U)
 Mark episodes watched (U)
-Remove shows from list (D)
+//Remove shows from list (D)
 View basic analytics
 Make it so users can't say they’ve seen something thats not out yet
 
@@ -19,8 +19,7 @@ Advanced analytics
 Comments on episode?
 Status bar 
 Random new show to add
-
-Stretch
+search without loggging in 
 Change view colour
 
 Models
@@ -66,5 +65,3 @@ Search bar functioning- populating results
 Post for backend
 Patch for episode
 Updating the DOM with shows and episodes
-
-Wire Frame

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_050225) do
     t.integer "season"
     t.integer "number"
     t.string "name"
+    t.integer "api_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

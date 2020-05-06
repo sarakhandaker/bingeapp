@@ -7,5 +7,9 @@ class ShowsController < ApplicationController
 
     def create
     end
+    def destroy
+        show = show.find(params[:id])
+        show.destroy
+    end
 
 end

@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+      def index
+        users = User.all
+        render json: users.to_json, :except => [:updated_at]
+      end
+
       def show
         user = User.find(params[:id])
 
@@ -14,7 +19,7 @@ class UsersController < ApplicationController
         # }
         user=User.create(user_params)
         user.update(score: 0)
-        render json: user, only: [:name]
+        render json: user, only: [:username, :location, :id]
       end
 
       def destroy
