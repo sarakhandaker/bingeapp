@@ -70,7 +70,7 @@ function makeCard(title) {
     }
 
   let follow=document.createElement('div')
-  follow.className="col-sm-6 information-right"
+  follow.className="col-sm-12 information-right"
   follow.innerHTML =`
         <div class="">
           <div class="follow" style= "cursor: pointer">
@@ -160,7 +160,7 @@ function makeusercards(title, usershow){
           <span class="remove"> <img id="remove" src="img/delete.png" alt=""> </span>
         </div>`
   let info=document.createElement('div')
-  info.className="col-sm-6 information-right"
+  info.className="col-sm-12 information-right"
   info.innerHTML =`     
       <div class="information-button">
         <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -179,10 +179,11 @@ function makeusercards(title, usershow){
 }
 
 function handleDelete(usershow, card){
+  card.remove()
       fetch(`http://localhost:3000/user_shows/${usershow.id}`, {
         method: 'DELETE',
       })
-      .then(card.remove()) 
+      .then(changeWelcome()) 
 }
 
 function buildBetterShowCard(show, usershow, season) {
@@ -221,17 +222,8 @@ function buildBetterShowCard(show, usershow, season) {
               <div class="col-md-6">
                 <div class="form-group">
                    <select class="form-control" id="formControlSelect">
-                    <option>Season</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
                   </select>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <button class="checksesion">Mark season 2 as watched</button>
               </div>
             </div>
           </div>
@@ -246,7 +238,8 @@ function buildBetterShowCard(show, usershow, season) {
 </div>  
   `
   collapseParent.prepend(el)
-  document.getElementById("formControlSelect").addEventListener("change", (event)=>  {
+  let seasonform=document.getElementById("formControlSelect")
+  seasonform.addEventListener("change", (event)=>  {
     event.preventDefault()
     buildBetterShowCard(show, usershow, event.target.value)
   })
@@ -254,6 +247,15 @@ function buildBetterShowCard(show, usershow, season) {
   fetch(`http://api.tvmaze.com/shows/${show.id}/episodes`)
   .then(resp => resp.json())
   .then(resp=> {
+    let seasonnumber= resp[resp.length-1].season
+
+    for(i=0; i< seasonnumber; i++) {
+      let option=document.createElement('option')
+      option.value=i+1
+      option.innerText=`Season ${i+1}`
+      seasonform.append(option)
+    }
+
     buildBetterEpisodeCards(resp, season)})
 } 
 
@@ -264,6 +266,7 @@ function buildBetterEpisodeCards(episodes, season) {
   .then(resp => resp.json())
   .then(resp=> { console.log(resp)
     let newresp=resp.map(resp=> resp.episode_id)
+    let counter=0
     if (season){
       episodes=episodes.filter(ep => ep.season == season)
     }
@@ -306,12 +309,25 @@ function buildBetterEpisodeCards(episodes, season) {
     icon.className = "col-sm-12 watched"
     icon.innerHTML = ` <img src="img/hide.png" alt="">`
     if (newresp.includes(episode.id)){
+      counter++
       infoDiv.classList.toggle("seen")
       icon.innerHTML = ` <img src="img/visibility-button.png" alt="">`
       }
     div3.appendChild(icon)
     icon.addEventListener('click', ()=> handleSeen(episode, infoDiv))
-    })})
+
+  
+    })
+    // let statusbar= document.createElement('div')
+    // statusbar.className='progress-bar'
+    // statusbar.innerHTML=`<div class="bar positive">
+    //   <span>50%</span>
+    // </div>
+    // <div class="bar negative">
+    //   <span>50%</span>
+    // </div>`
+    //   collapseParent.prepend(statusbar)
+  })
 
 }
 
@@ -420,3 +436,16 @@ function start() {
     location.reload()
   } 
   )
+
+  //change welcome and tv-following count
+let welcomeUser = document.getElementById(773)
+let followerCount = document.getElementById(584)
+changeWelcome()
+function changeWelcome(){
+  fetch(`http://localhost:3000/users/${sessionStorage.getItem("user")}`)
+  .then(resp=> resp.json())
+  .then(user=>{
+  welcomeUser.innerHTML = `<h1> Hello, ${(user.username).charAt(0).toUpperCase() + (user.username).slice(1)}!</h1>`
+  followerCount.innerHTML = `<h2>${user.shows.length}</h2>`
+})
+}
