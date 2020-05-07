@@ -226,6 +226,7 @@ function buildBetterShowCard(show, usershow, season) {
               <div class="col-md-6">
                 <div class="form-group">
                    <select class="form-control" id="formControlSelect">
+                   <option>ALL</option>
                   </select>
                 </div>
               </div>
@@ -275,11 +276,15 @@ function buildBetterEpisodeCards(episodes, season) {
   .then(resp => resp.json())
   .then(resp=> { let newresp=resp.map(resp=> resp.episode_id)
     let counter=0
-    if (season){
+    console.log(season)
+    if (season && season != "ALL"){
       episodes=episodes.filter(ep => ep.season == season)
       length=episodes.length
       let el=document.getElementsByClassName("watchall")[0]
       el.innerHTML=`<button class="checksesion">Mark season ${season} as watched</button>`
+      el.addEventListener("click", function(event){
+       handleSeenALL(episodes)
+      })
     }
     episodes.forEach(episode => {
     let totalDiv = document.createElement('div')
@@ -293,6 +298,7 @@ function buildBetterEpisodeCards(episodes, season) {
 
     let div3 = document.createElement('div')
     div3.className = "row"
+    div3.classList.add("info-div-parent")
     div2.appendChild(div3)
 
     let imgDiv = document.createElement('div')
@@ -372,6 +378,30 @@ function handleSeen (episode, infoDiv, length) {
     makestatusbar(parseInt(el.id)-((1/length)*100))
     handleDeleteUserEpisode(infoDiv)
   }
+}
+
+function handleSeenALL(episodes){
+  data={ "user_id": sessionStorage.getItem("user"),
+          "episode_list": episodes
+        }
+  fetch('http://localhost:3000/user_episodes', {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+    })
+    .then(resp => {let els=document.getElementsByClassName("info-div-parent")
+      for (var i = 0; i < els.length; i++) {
+        els[i].classList.toggle("seen")
+      }
+      let els2=document.getElementsByClassName("episode-title")
+      for (var i = 0; i < els2.length; i++) {
+        els2[i].classList.toggle("seen")
+        els2[i].nextSibling.getElementsByTagName("img")[0].src="img/visibility-button.png"
+      }
+      makestatusbar(100)
+  })
 }
 
 function handleDeleteUserEpisode(infoDiv){
