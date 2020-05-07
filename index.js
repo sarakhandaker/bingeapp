@@ -157,7 +157,8 @@ function makeusercards(title, usershow){
 
   if (usershow){
    let el = document.createElement('h6')
-   el.innerHTML= `<img src="img/seo-and-web.png" alt=""> ${usershow.show.users.length} followers`
+   el.setAttribute("style","padding: 10px;")
+   el.innerHTML= `<img src="img/seo-and-web.png" alt=""> ${usershow.show.users.length==1? usershow.show.users.length + " follower": usershow.show.users.length + " followers"}`
    div4.getElementsByTagName('div')[0].appendChild(el)
   }
   let follow=document.createElement('div')
@@ -283,7 +284,12 @@ function buildBetterEpisodeCards(episodes, season) {
       episodes=episodes.filter(ep => ep.season == season)
       length=episodes.length
       let el=document.getElementsByClassName("watchall")[0]
-      el.innerHTML=`<button class="checksesion">Mark season ${season} as watched</button>`
+      el.innerHTML=`<button class="checksesion" style="
+      margin: 10;
+      /* padding: 100px; */
+      position: relative;
+      left: 375px;
+      top: -70px;">Mark season ${season} as watched</button>`
       el.addEventListener("click", function(event){
        handleSeenALL(episodes)
       })
