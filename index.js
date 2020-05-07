@@ -230,6 +230,8 @@ function buildBetterShowCard(show, usershow, season) {
                 </div>
               </div>
             </div>
+            <div class="col-md-6 watchall" id="watchall">
+            </div>
           </div>
         </div>
           <div class="container">
@@ -276,6 +278,8 @@ function buildBetterEpisodeCards(episodes, season) {
     if (season){
       episodes=episodes.filter(ep => ep.season == season)
       length=episodes.length
+      let el=document.getElementsByClassName("watchall")[0]
+      el.innerHTML=`<button class="checksesion">Mark season ${season} as watched</button>`
     }
     episodes.forEach(episode => {
     let totalDiv = document.createElement('div')
