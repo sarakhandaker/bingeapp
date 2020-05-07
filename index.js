@@ -133,6 +133,7 @@ function makeusercards(title, usershow){
   div1.className="container-fluid"
   let div2=document.createElement('div')
   div2.className="row"
+  div2.classList.add("megacard")
   div2.innerHTML =`
         <div class="col-sm-12 cardimage">
           <img src="${title.image.original}" alt="">
@@ -175,12 +176,12 @@ function makeusercards(title, usershow){
         </a>  
       </div>`
 
-  div4.append(follow,info)
+  div4.append(follow)
   div3.appendChild(div4)
-  div2.appendChild(div3)
-  div1.appendChild(div2)
-  card.appendChild(div1)
-  parent.appendChild(card)
+  div2.append(div3, info)
+  div1.append(div2)
+  card.append(div1)
+  parent.append(card)
   info.addEventListener('click',event => buildBetterShowCard(title, usershow))
   follow.addEventListener('click', event => handleDelete(usershow, card))
 }

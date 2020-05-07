@@ -110,6 +110,7 @@ padding: 50px;
       width: 100%;
       text-align: right;
       padding-top: 50px;
+      padding-bottom: 30px;
       padding-right: 15px;
     }
     #all-informations{
@@ -165,11 +166,14 @@ padding: 50px;
     float: right;
 }
 #episodeee{
-  border: solid #FA6600;
+  /* border: solid #FA6600; */
   border-width:3px;
   padding: 0px  !important;
   margin: 15px !important;
 
+}
+.info-div-parent {
+  border: solid #FA6600;
 }
 .episode-image{
   
@@ -420,4 +424,16 @@ a {
 
 h6 {
   padding: 20px;
+}
+.megacard {
+  justify-content: space-between;
+  height: 100%;
+}
+
+.container-fluid {
+  height: 100%;
+}
+
+#collapseExample {
+  width: 100%
 }
