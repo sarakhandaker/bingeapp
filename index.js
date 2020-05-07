@@ -170,7 +170,7 @@ function makeusercards(title, usershow){
   let info=document.createElement('div')
   info.className="col-sm-12 information-right"
   info.innerHTML =`     
-      <div class="information-button">
+      <div class="col-sm-12 information-button">
         <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
           <img src="img/Information.png" alt="">
         </a>  
@@ -280,7 +280,6 @@ function buildBetterEpisodeCards(episodes, season) {
   .then(resp => resp.json())
   .then(resp=> { let newresp=resp.map(resp=> resp.episode_id)
     let counter=0
-    console.log(season)
     if (season && season != "ALL"){
       episodes=episodes.filter(ep => ep.season == season)
       length=episodes.length
@@ -437,13 +436,10 @@ function start() {
   //IF NOT SIGNED IN SHOW LOGIN HTML
   if (!sessionStorage.getItem("user")){
     let body=document.getElementsByTagName('body')[0]
-    body.innerHTML=`    <div class="container">
+    body.innerHTML=`    <div class="container login-page">
     <div class="row">
         <div class="col-lg-3 col-md-2"></div>
         <div class="col-lg-6 col-md-8 login-box">
-            <div class="col-lg-12 login-key">
-                <i class="fa fa-key" aria-hidden="true"></i>
-            </div>
             <div class="col-lg-12 login-title">
               WELCOME TO BINGE!
             </div>
@@ -472,13 +468,10 @@ function start() {
   //SIGN UP
     function signuporlogin(event, signup){
       let body=document.getElementsByTagName('body')[0]
-      body.innerHTML=`    <div class="container">
+      body.innerHTML=`    <div class="container login-page">
       <div class="row">
           <div class="col-lg-3 col-md-2"></div>
           <div class="col-lg-6 col-md-8 login-box">
-              <div class="col-lg-12 login-key">
-                  <i class="fa fa-key" aria-hidden="true"></i>
-              </div>
               <div class="col-lg-12 login-title">
                 WELCOME TO BINGE!
               </div>
