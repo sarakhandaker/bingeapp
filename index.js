@@ -318,15 +318,13 @@ function buildBetterEpisodeCards(episodes, season) {
 
   
     })
-    // let statusbar= document.createElement('div')
-    // statusbar.className='progress-bar'
-    // statusbar.innerHTML=`<div class="bar positive">
-    //   <span>50%</span>
-    // </div>
-    // <div class="bar negative">
-    //   <span>50%</span>
-    // </div>`
-    //   collapseParent.prepend(statusbar)
+    let percent=(counter/(episodes.length))*100
+    let statusbar= document.createElement('div')
+    statusbar.innerHTML=`<div class="progress-wrap progress" data-progress-percent="">
+    <div class="progress-bar progress" style="height:24px;width:${percent}%"></div>
+  </div>`
+
+      collapseParent.prepend(statusbar)
   })
 
 }
@@ -364,27 +362,77 @@ function start() {
   //IF NOT SIGNED IN SHOW LOGIN HTML
   if (!sessionStorage.getItem("user")){
     let body=document.getElementsByTagName('body')[0]
-    body.innerText=""
-    let loginbtn=document.createElement('button')
-    loginbtn.innerText="LOGIN"
-    let signupbtn=document.createElement('button')
-    signupbtn.innerText="SIGNUP"
-    body.append(loginbtn,signupbtn)
+    body.innerHTML=`    <div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-2"></div>
+        <div class="col-lg-6 col-md-8 login-box">
+            <div class="col-lg-12 login-key">
+                <i class="fa fa-key" aria-hidden="true"></i>
+            </div>
+            <div class="col-lg-12 login-title">
+              WELCOME TO BINGE!
+            </div>
+            <div class="col-lg-12 login-form">
+                <div class="col-lg-12 login-form">                        
+                        <div class="col-lg-12 loginbttm">
+                            <div class="col-lg-6 login-btm login-text">
+                                <!-- Error Message -->
+                            </div>
+                            <div class="col-lg-6 login-btm login-button">
+                                <button class="signup btn btn-outline-primary">SIGNUP</button>
+                                <button class="btn btn-outline-primary">LOGIN</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-2"></div>
+        </div>
+    </div>`
+    console.log(document.getElementsByClassName("btn")[0])
+    let loginbtn= document.getElementsByClassName("btn")[1]
+    let signupbtn= document.getElementsByClassName("signup")[0]
     signupbtn.addEventListener('click', ()=> signuporlogin(event, true))
     loginbtn.addEventListener('click', ()=> signuporlogin(event, false))
   }
-  
   //SIGN UP
     function signuporlogin(event, signup){
       let body=document.getElementsByTagName('body')[0]
-      body.innerHTML=""
-      let form=document.createElement("form")
-      form.innerHTML=  `<label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-      <label for="uname"><b>Location</b></label>
-      <input type="text" placeholder="Enter Location" name="location" required>
-      <button type="submit">Signup</button>`
-      body.append(form)
+      body.innerHTML=`    <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-2"></div>
+          <div class="col-lg-6 col-md-8 login-box">
+              <div class="col-lg-12 login-key">
+                  <i class="fa fa-key" aria-hidden="true"></i>
+              </div>
+              <div class="col-lg-12 login-title">
+                WELCOME TO BINGE!
+              </div>
+              <div class="col-lg-12 login-form">
+                  <div class="col-lg-12 login-form">
+                      <form>
+                          <div class="form-group">
+                              <label class="form-control-label">USERNAME</label>
+                              <input type="text" class="form-control" id="input-login" name="uname">
+                          </div>
+                          <div class="form-group">
+                              <label class="form-control-label">LOCATION</label>
+                              <input type="text" class="form-control" id="input-login" name="location">
+                          </div>
+                          <div class="col-lg-12 loginbttm">
+                              <div class="col-lg-6 login-btm login-text">
+                                  <!-- Error Message -->
+                              </div>
+                              <div class="col-lg-6 login-btm login-button">
+                                  <button type="submit" class="btn btn-outline-primary">SUBMIT</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-2"></div>
+          </div>
+      </div>`
+      let form=document.getElementsByTagName("form")[0]
       form.addEventListener('submit', (event)=>{
         event.preventDefault()
         let username=event.target.uname.value
