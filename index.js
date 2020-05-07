@@ -137,19 +137,19 @@ function makeusercards(title, usershow){
   div3.className="container information-box"
   let div4=document.createElement('div')
   div4.className="row"
-  if (title.network){
+  if (title.network && usershow){
   div4.innerHTML =`
       <div class="col-sm-6 information-left">
         <h3>${title.name}</h3>
         <h6>${title.network.name} - ${title.premiered}</h6>
         <img src="img/seo-and-web.png" alt="">
+        <h6>${usershow.show.users.length} followers</h6>
       </div>`
   }
   else {
     div4.innerHTML =`
     <div class="col-sm-6 information-left">
     <h3>${title.name}</h3>
-    <img src="img/seo-and-web.png" alt="">
   </div>`
   }
   let follow=document.createElement('div')
@@ -253,9 +253,11 @@ function buildBetterShowCard(show, usershow, season) {
       let option=document.createElement('option')
       option.value=i+1
       option.innerText=`Season ${i+1}`
+      if (option.value==season){
+        option.setAttribute('selected', true)
+      }
       seasonform.append(option)
     }
-
     buildBetterEpisodeCards(resp, season)})
 } 
 
@@ -296,14 +298,7 @@ function buildBetterEpisodeCards(episodes, season) {
     infoDiv.className = "episode-title"
 
     div3.appendChild(infoDiv)
-
-    let titleh5 = document.createElement('h5')
-    titleh5.innerText = `${episode.name}`
-    infoDiv.appendChild(titleh5)
-
-    let airh6 = document.createElement('h6')
-    airh6.innerText = `Air Date: ${episode.airdate}`
-    infoDiv.appendChild(airh6)
+    infoDiv.innerHTML=`<h5>${episode.number}. ${episode.name}</h5> <h6>Air Date: ${episode.airdate}<br>Runtime: ${episode.runtime} min </h6>${episode.summary}`
 
     let icon = document.createElement('div')
     icon.className = "col-sm-12 watched"
@@ -311,6 +306,7 @@ function buildBetterEpisodeCards(episodes, season) {
     if (newresp.includes(episode.id)){
       counter++
       infoDiv.classList.toggle("seen")
+      infoDiv.parentNode.classList.toggle("seen")
       icon.innerHTML = ` <img src="img/visibility-button.png" alt="">`
       }
     div3.appendChild(icon)
@@ -320,7 +316,7 @@ function buildBetterEpisodeCards(episodes, season) {
     })
     let percent=(counter/(episodes.length))*100
     let statusbar= document.createElement('div')
-    statusbar.innerHTML=`<div class="progress-wrap progress" data-progress-percent="">
+    statusbar.innerHTML=`<h6> Percent Completed: ${Math.round(percent)}%</h6><div class="progress-wrap progress" data-progress-percent="">
     <div class="progress-bar progress" style="height:24px;width:${percent}%"></div>
   </div>`
 
@@ -332,7 +328,8 @@ function buildBetterEpisodeCards(episodes, season) {
 function handleSeen (episode, infoDiv) {
   if (!infoDiv.classList.contains("seen")){
     let data ={ "user_id": sessionStorage.getItem("user"),
-    "episode_id": episode.id
+    "episode_id": episode.id,
+    "runtime": episode.runtime
     }
     fetch('http://localhost:3000/user_episodes', {
     method: 'POST',
@@ -344,6 +341,7 @@ function handleSeen (episode, infoDiv) {
     .then(response => response.json())
     .then(data => {
     infoDiv.classList.toggle("seen")
+    infoDiv.parentNode.classList.toggle("seen")
     infoDiv.nextSibling.getElementsByTagName("img")[0].src="img/visibility-button.png"
     console.log('Success:', data);
     })
@@ -354,6 +352,7 @@ function handleSeen (episode, infoDiv) {
   else {
     infoDiv.classList.toggle("seen")
     infoDiv.nextSibling.getElementsByTagName("img")[0].src="img/hide.png"
+    location.reload()
   }
 }
 
@@ -488,6 +487,7 @@ function start() {
   //change welcome and tv-following count
 let welcomeUser = document.getElementById(773)
 let followerCount = document.getElementById(584)
+let runtimeCount = document.getElementById(222)
 changeWelcome()
 function changeWelcome(){
   fetch(`http://localhost:3000/users/${sessionStorage.getItem("user")}`)
@@ -495,5 +495,11 @@ function changeWelcome(){
   .then(user=>{
   welcomeUser.innerHTML = `<h1> Hello, ${(user.username).charAt(0).toUpperCase() + (user.username).slice(1)}!</h1>`
   followerCount.innerHTML = `<h2>${user.shows.length}</h2>`
+  fetch(`http://localhost:3000/user_episodes/${sessionStorage.getItem("user")}`)
+  .then(resp=> resp.json())
+  .then(resp=>{
+
+   runtimeCount.innerHTML=`<h2>${Math.round(resp.reduce((sum, ep) => sum + ep.runtime, 0)/60)} hrs</h2>` 
+  })
 })
 }
