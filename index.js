@@ -6,9 +6,10 @@ const logoutbtn=document.getElementsByClassName("logout-icon")[0]
 const collapseParent = document.getElementById("collapseExample")
 
 showUserShows()
+start()
 
 myshowbtn.addEventListener("click", () => {
-  collapseParent.classList.add('hidden')
+  collapseParent.innerHTML=""
   showUserShows()})
 searchForm.addEventListener("submit", event => {
   collapseParent.classList.add('hidden')
@@ -21,9 +22,7 @@ function handleSearch(e) {
   fetch(`http://api.tvmaze.com/search/shows?q=${e.target.title.value}`)
   .then(resp => resp.json())
   .then(resp => {parent.innerText = ""
-  console.log(resp)
     resp.forEach(title => {
-    console.log(title)
      makeCard(title)
   })
 })
@@ -32,9 +31,7 @@ function handleSearch(e) {
   })
 }
 
-//HANDLE CASE OF NO IMAGE AVAILABLE
 function makeCard(title) {
-  console.log(title)
   let card = document.createElement('div')
   card.className = "col-md-4 card-tvshow"
   let div1=document.createElement('div')
@@ -53,7 +50,6 @@ function makeCard(title) {
             <img src="img/tv-2268952_1280.png" alt="">
           </div>`
   }
-
   let div3=document.createElement('div')
   div3.className="container information-box"
   let div4=document.createElement('div')
@@ -74,7 +70,7 @@ function makeCard(title) {
     }
 
   let follow=document.createElement('div')
-  follow.className="col-sm-6 information-right"
+  follow.className="col-sm-12 information-right"
   follow.innerHTML =`
         <div class="">
           <div class="follow" style= "cursor: pointer">
@@ -90,7 +86,6 @@ function makeCard(title) {
   follow.addEventListener('click', event => handleFollow(event, title))
 }
 
-//TO DO
 function handleFollow(e,object){ 
   let data ={ "user_id": sessionStorage.getItem("user"),
                   "api_id": object.show.id,
@@ -110,8 +105,7 @@ function handleFollow(e,object){
       })
       .catch((error) => {
         console.error('Error:', error);
-      });
-      
+      })
 }
 
 function showUserShows() {
@@ -143,13 +137,21 @@ function makeusercards(title, usershow){
   div3.className="container information-box"
   let div4=document.createElement('div')
   div4.className="row"
+  if (title.network){
   div4.innerHTML =`
       <div class="col-sm-6 information-left">
         <h3>${title.name}</h3>
         <h6>${title.network.name} - ${title.premiered}</h6>
         <img src="img/seo-and-web.png" alt="">
       </div>`
-
+  }
+  else {
+    div4.innerHTML =`
+    <div class="col-sm-6 information-left">
+    <h3>${title.name}</h3>
+    <img src="img/seo-and-web.png" alt="">
+  </div>`
+  }
   let follow=document.createElement('div')
   follow.className="col-sm-6 information-right"
   follow.innerHTML =`
@@ -172,192 +174,162 @@ function makeusercards(title, usershow){
   div1.appendChild(div2)
   card.appendChild(div1)
   parent.appendChild(card)
-  info.addEventListener('click',event => showInfo(title, usershow))
+  info.addEventListener('click',event => buildBetterShowCard(title, usershow))
   follow.addEventListener('click', event => handleDelete(usershow, card))
 }
 
 function handleDelete(usershow, card){
+  card.remove()
       fetch(`http://localhost:3000/user_shows/${usershow.id}`, {
         method: 'DELETE',
       })
-      .then(card.remove()) 
+      .then(changeWelcome()) 
 }
 
-function showInfo(title, usershow){
+function buildBetterShowCard(show, usershow, season) {
   collapseParent.classList.remove('hidden')
-  parent.innerText = ""
-  makeusercards(title)
-  buildBetterShowCard(title)
-  fetch(`http://localhost:3000/episodes/${usershow.show_id}`)
+  parent.innerHTML=""
+  collapseParent.innerHTML=""
+  makeusercards(show)
+  el= document.createElement('div')
+  el.innerHTML=`
+  <div class="card card-body" id="all-informations">
+  <div class="col-sm-6 informations-one">
+    <h3 id="showName">${show.name}</h3>
+    <img id="showImage"src="img/seo-and-web.png" alt="">
+    <h6>18555</h6>
+  </div>
+  <div class="col-sm-12" id="showSummary">
+    <p>${show.summary}</p>
+  </div>
+  <div class="col-sm-6 tableinformation">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th scope="row">Aired</th>
+          <td id="showAired">${show.premiered}</td>
+        </tr>
+        <tr>
+          <th scope="row">Status</th>
+          <td id="showStatus">${show.status}</td>
+        </tr>
+       </tbody>
+    </table>
+  </div>
+  <div class="select-season">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                   <select class="form-control" id="formControlSelect">
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="container">
+            <div id="episodeRow" class="row">
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>  
+  `
+  collapseParent.prepend(el)
+  let seasonform=document.getElementById("formControlSelect")
+  seasonform.addEventListener("change", (event)=>  {
+    event.preventDefault()
+    buildBetterShowCard(show, usershow, event.target.value)
+  })
+ 
+  fetch(`http://api.tvmaze.com/shows/${show.id}/episodes`)
   .then(resp => resp.json())
-  .then(resp=> buildBetterEpisodeCards(title ,resp))
-}
+  .then(resp=> {
+    let seasonnumber= resp[resp.length-1].season
 
-function addEpisodes(episodes) {
-let div= document.getElementsByClassName("col-sm-12")[1]
-
-episodes.forEach(ep => {
-  let li =document.createElement('li')
-  li.innerText=`name: ${ep.name}- season: ${ep.season}`
-  div.appendChild(li)
-})
-}
-
-//USER LOGIN STUFF
-start()
-function start() {
-//IF NOT SIGNED IN SHOW LOGIN HTML
-if (!sessionStorage.getItem("user")){
-  let body=document.getElementsByTagName('body')[0]
-  body.innerText=""
-  let loginbtn=document.createElement('button')
-  loginbtn.innerText="LOGIN"
-  let signupbtn=document.createElement('button')
-  signupbtn.innerText="SIGNUP"
-  body.append(loginbtn,signupbtn)
-  signupbtn.addEventListener('click', ()=> signuporlogin(event, true))
-  loginbtn.addEventListener('click', ()=> signuporlogin(event, false))
-}
-
-//SIGN UP
-  function signuporlogin(event, signup){
-    let body=document.getElementsByTagName('body')[0]
-    body.innerHTML=""
-    let form=document.createElement("form")
-    form.innerHTML=  `<label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-    <label for="uname"><b>Location</b></label>
-    <input type="text" placeholder="Enter Location" name="location" required>
-    <button type="submit">Signup</button>`
-    body.append(form)
-    form.addEventListener('submit', (event)=>{
-      event.preventDefault()
-      let username=event.target.uname.value
-      let location=event.target.location.value
-      signup? makeUser(username, location): findUser(username, location)
-    })
-  }
-}
-  function makeUser(uname, loc){
-    const data = { username: uname, 
-                  location: loc };
-                 
-    fetch('http://localhost:3000/users', {
-      method: 'POST', // or 'PUT'
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-    .then(response => response.json())
-    .then(data => {
-      sessionStorage.setItem("user", data.id)
-      console.log(data, sessionStorage.getItem("user"))
-      console.log('Success:', data)
-      location.reload()
-    })
-    .catch((error) => {
-      console.error('Error:', error)
-})
-  }
-
-  function findUser(uname, loc){
-    fetch('http://localhost:3000/users')
-    .then(resp=> resp.json())
-    .then(resp=>{
-      user=resp.find(user => user.username==uname && user.location==loc)
-      if (user)
-      {
-        sessionStorage.setItem("user", user.id)
-        location.reload()
-      }
-      else {
-        location.reload()
-      }
-    })
-  }
-
-logoutbtn.addEventListener("click", () => {
-  sessionStorage.clear()
-  location.reload()
-} 
-)
-
-function buildBetterShowCard(show) {
-  let showName = document.getElementById("showName")
-  showName.innerText = `${show.name}`
-
-  let showNetwork = document.getElementById("showNetwork")
-  showNetwork.innerText = `${show.network.name}`
-
-  let showSummary = document.getElementById("showSummary")
-  showSummary.innerHTML = `${show.summary}`
-
-  let showAired = document.getElementById("showAired")
-  showAired.innerText = `${show.premiered}`
-
-  let showStatus = document.getElementById("showStatus")
-  showStatus.innerText = `${show.status}`
-} 
-
-function buildBetterEpisodeCards(title, episodes) {
-  fetch(`http://localhost:3000/user_episodes/${sessionStorage.getItem("user")}`)
-  .then(resp => resp.json())
-  .then(resp=> { let newresp=resp.map(resp=> resp.episode.id)
-
-  episodes.forEach(episode => {
-  let episodeRow = document.getElementById("episodeRow")
-
-  let totalDiv = document.createElement('div')
-  totalDiv.id = "episodeee"
-  totalDiv.className = "col-md-3"
-  episodeRow.appendChild(totalDiv)
-
-  let div2 = document.createElement('div')
-  div2.className = "container-fluid"
-  totalDiv.appendChild(div2)
-
-  let div3 = document.createElement('div')
-  div3.className = "row"
-  div2.appendChild(div3)
-
-  let imgDiv = document.createElement('div')
-  imgDiv.className = "col-md-12 episode-image"
-  div3.appendChild(imgDiv)
-  let img = document.createElement('img')
-  img.src = `${episode.image_url}`
-  imgDiv.appendChild(img)
-
-  let infoDiv = document.createElement('div')
-  infoDiv.className = "episode-title"
-  // infoDiv.className = "col-sm-12 watched"
-  // icon.innerHTML = ` <img src="img/interface (1).png" alt="">`
-
-  if (newresp.includes(episode.id)){
-    infoDiv.classList.toggle("seen")
+    for(i=0; i< seasonnumber; i++) {
+      let option=document.createElement('option')
+      option.value=i+1
+      option.innerText=`Season ${i+1}`
+      seasonform.append(option)
     }
 
-  div3.appendChild(infoDiv)
+    buildBetterEpisodeCards(resp, season)})
+} 
 
-  let titleh5 = document.createElement('h5')
-  titleh5.innerText = `${episode.name}`
-  infoDiv.appendChild(titleh5)
+function buildBetterEpisodeCards(episodes, season) {
+  let episodeRow = document.getElementById("episodeRow")
+  episodeRow.innerHTML=''
+  fetch(`http://localhost:3000/user_episodes/${sessionStorage.getItem("user")}`)
+  .then(resp => resp.json())
+  .then(resp=> { console.log(resp)
+    let newresp=resp.map(resp=> resp.episode_id)
+    let counter=0
+    if (season){
+      episodes=episodes.filter(ep => ep.season == season)
+    }
+    episodes.forEach(episode => {
+    let totalDiv = document.createElement('div')
+    totalDiv.id = "episodeee"
+    totalDiv.className = "col-md-3"
+    episodeRow.appendChild(totalDiv)
 
-  let airh6 = document.createElement('h6')
-  airh6.innerText = `Episode Airdate goes here`
-  infoDiv.appendChild(airh6)
+    let div2 = document.createElement('div')
+    div2.className = "container-fluid"
+    totalDiv.appendChild(div2)
 
-  let icon = document.createElement('div')
-  icon.className = "col-sm-12 watched"
-  icon.innerHTML = ` <img src="img/hide.png" alt="">`
-  div3.appendChild(icon)
-  icon.addEventListener('click', ()=> handleSeen(event, episode, infoDiv))
+    let div3 = document.createElement('div')
+    div3.className = "row"
+    div2.appendChild(div3)
 
-  })})
+    let imgDiv = document.createElement('div')
+    imgDiv.className = "col-md-12 episode-image"
+    div3.appendChild(imgDiv)
+    let img = document.createElement('img')
+    
+    img.src = episode.image? `${episode.image.medium}`: 'img/tv-2268952_1280.png'
+    imgDiv.appendChild(img)
+
+    let infoDiv = document.createElement('div')
+    infoDiv.className = "episode-title"
+
+    div3.appendChild(infoDiv)
+
+    let titleh5 = document.createElement('h5')
+    titleh5.innerText = `${episode.name}`
+    infoDiv.appendChild(titleh5)
+
+    let airh6 = document.createElement('h6')
+    airh6.innerText = `Air Date: ${episode.airdate}`
+    infoDiv.appendChild(airh6)
+
+    let icon = document.createElement('div')
+    icon.className = "col-sm-12 watched"
+    icon.innerHTML = ` <img src="img/hide.png" alt="">`
+    if (newresp.includes(episode.id)){
+      counter++
+      infoDiv.classList.toggle("seen")
+      icon.innerHTML = ` <img src="img/visibility-button.png" alt="">`
+      }
+    div3.appendChild(icon)
+    icon.addEventListener('click', ()=> handleSeen(episode, infoDiv))
+
+  
+    })
+    let percent=(counter/(episodes.length))*100
+    let statusbar= document.createElement('div')
+    statusbar.innerHTML=`<div class="progress-wrap progress" data-progress-percent="">
+    <div class="progress-bar progress" style="height:24px;width:${percent}%"></div>
+  </div>`
+
+      collapseParent.prepend(statusbar)
+  })
+
 }
 
-
-function handleSeen (event, episode, infoDiv) {
+function handleSeen (episode, infoDiv) {
   if (!infoDiv.classList.contains("seen")){
     let data ={ "user_id": sessionStorage.getItem("user"),
     "episode_id": episode.id
@@ -381,12 +353,141 @@ function handleSeen (event, episode, infoDiv) {
   }
   else {
     infoDiv.classList.toggle("seen")
-    infoDiv.nextSibling.getElementsByTagName("img")[0].src="img/interface (1).png"
+    infoDiv.nextSibling.getElementsByTagName("img")[0].src="img/hide.png"
   }
 }
 
-//_____________TO DO__________________
-//add episode info(img, airdate) to db
+//USER LOGIN STUFF
+function start() {
+  //IF NOT SIGNED IN SHOW LOGIN HTML
+  if (!sessionStorage.getItem("user")){
+    let body=document.getElementsByTagName('body')[0]
+    body.innerHTML=`    <div class="container login-page">
+    <div class="row">
+        <div class="col-lg-3 col-md-2"></div>
+        <div class="col-lg-6 col-md-8 login-box">
+            <div class="col-lg-12 login-title">
+              WELCOME TO BINGE!
+            </div>
+            <div class="col-lg-12 login-form">
+                <div class="col-lg-12 login-form">                        
+                        <div class="col-lg-12 loginbttm">
+                            <div class="col-lg-6 login-btm login-text">
+                                <!-- Error Message -->
+                            </div>
+                            <div class="col-lg-6 login-btm login-button">
+                                <button class="signup btn btn-outline-primary">SIGNUP</button>
+                                <button class="btn btn-outline-primary">LOGIN</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-2"></div>
+        </div>
+    </div>`
+    console.log(document.getElementsByClassName("btn")[0])
+    let loginbtn= document.getElementsByClassName("btn")[1]
+    let signupbtn= document.getElementsByClassName("signup")[0]
+    signupbtn.addEventListener('click', ()=> signuporlogin(event, true))
+    loginbtn.addEventListener('click', ()=> signuporlogin(event, false))
+  }
+  //SIGN UP
+    function signuporlogin(event, signup){
+      let body=document.getElementsByTagName('body')[0]
+      body.innerHTML=`    <div class="container login-page">
+      <div class="row">
+          <div class="col-lg-3 col-md-2"></div>
+          <div class="col-lg-6 col-md-8 login-box">
+              <div class="col-lg-12 login-title">
+                WELCOME TO BINGE!
+              </div>
+              <div class="col-lg-12 login-form">
+                  <div class="col-lg-12 login-form">
+                      <form>
+                          <div class="form-group">
+                              <label class="form-control-label">USERNAME</label>
+                              <input type="text" class="form-control" id="input-login" name="uname">
+                          </div>
+                          <div class="form-group">
+                              <label class="form-control-label">LOCATION</label>
+                              <input type="text" class="form-control" id="input-login" name="location">
+                          </div>
+                          <div class="col-lg-12 loginbttm">
+                              <div class="col-lg-6 login-btm login-text">
+                                  <!-- Error Message -->
+                              </div>
+                              <div class="col-lg-6 login-btm login-button">
+                                  <button type="submit" class="btn btn-outline-primary">SUBMIT</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-2"></div>
+          </div>
+      </div>`
+      let form=document.getElementsByTagName("form")[0]
+      form.addEventListener('submit', (event)=>{
+        event.preventDefault()
+        let username=event.target.uname.value
+        let location=event.target.location.value
+        signup? makeUser(username, location): findUser(username, location)
+      })
+    }
+  }
+    function makeUser(uname, loc){
+      const data = { username: uname, 
+                    location: loc };
+                   
+      fetch('http://localhost:3000/users', {
+        method: 'POST', // or 'PUT'
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => response.json())
+      .then(data => {
+        sessionStorage.setItem("user", data.id)
+        console.log(data, sessionStorage.getItem("user"))
+        console.log('Success:', data)
+        location.reload()
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+  })
+    }
+  
+    function findUser(uname, loc){
+      fetch('http://localhost:3000/users')
+      .then(resp=> resp.json())
+      .then(resp=>{
+        user=resp.find(user => user.username==uname && user.location==loc)
+        if (user) {
+          sessionStorage.setItem("user", user.id)
+          location.reload()
+        }
+        else {
+          location.reload()
+        }
+      })
+    }
+  
+  logoutbtn.addEventListener("click", () => {
+    sessionStorage.clear()
+    location.reload()
+  } 
+  )
 
-
-
+  //change welcome and tv-following count
+let welcomeUser = document.getElementById(773)
+let followerCount = document.getElementById(584)
+changeWelcome()
+function changeWelcome(){
+  fetch(`http://localhost:3000/users/${sessionStorage.getItem("user")}`)
+  .then(resp=> resp.json())
+  .then(user=>{
+  welcomeUser.innerHTML = `<h1> Hello, ${(user.username).charAt(0).toUpperCase() + (user.username).slice(1)}!</h1>`
+  followerCount.innerHTML = `<h2>${user.shows.length}</h2>`
+})
+}
