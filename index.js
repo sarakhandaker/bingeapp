@@ -7,6 +7,8 @@ const collapseParent = document.getElementById("collapseExample")
 let welcomeUser = document.getElementById(773)
 let followerCount = document.getElementById(584)
 let runtimeCount = document.getElementById(222)
+let watchedNum = document.getElementById(395)
+let watchedNumToday = document.getElementById(111)
 
 showUserShows()
 start()
@@ -346,7 +348,6 @@ function makestatusbar(percent){
 
 function handleSeen (episode, infoDiv, length) {
   let number=parseInt(runtimeCount.getElementsByTagName('h2')[0].innerText)
-  
   let el=document.getElementsByClassName("percent")[0]
 
   if (!infoDiv.classList.contains("seen")){
@@ -364,6 +365,11 @@ function handleSeen (episode, infoDiv, length) {
     })
     .then(response => response.json())
     .then(data => {
+    let newnum= parseInt(watchedNum.firstChild.innerText)+1
+    watchedNum.innerHTML = `<h2>${newnum}</h2>`
+    let newnum2= parseInt(watchedNumToday.firstChild.innerText)+1
+    watchedNumToday.innerHTML = `<h2>${newnum2}</h2>`
+
     infoDiv.classList.toggle("seen")
     infoDiv.parentNode.classList.toggle("seen")
     infoDiv.nextSibling.getElementsByTagName("img")[0].src="img/visibility-button.png"
@@ -377,6 +383,10 @@ function handleSeen (episode, infoDiv, length) {
     runtimeCount.getElementsByTagName('h2')[0].innerText=`${Math.round(number-(episode.runtime)/60)} hrs`
     makestatusbar(parseInt(el.id)-((1/length)*100))
     handleDeleteUserEpisode(infoDiv)
+    let newnum= parseInt(watchedNum.firstChild.innerText)-1
+    watchedNum.innerHTML = `<h2>${newnum}</h2>`
+    let newnum2= parseInt(watchedNumToday.firstChild.innerText)-1
+    watchedNumToday.innerHTML = `<h2>${newnum2}</h2>`
   }
 }
 
@@ -552,11 +562,21 @@ function changeWelcome(){
   .then(user=>{
   welcomeUser.innerHTML = `<h1> Hello, ${(user.username).charAt(0).toUpperCase() + (user.username).slice(1)}!</h1>`
   followerCount.innerHTML = `<h2>${user.shows.length}</h2>`
+})
+  fetch(`http://localhost:3000/user_episodes/${sessionStorage.getItem("user")}`)
+.then(resp => resp.json())
+.then(data=> {
+  let today=new Date()
+
+  let todayData=data.filter(user_ep=> (new Date(user_ep.created_at).toDateString()==today.toDateString()))
+  watchedNumToday.innerHTML = `<h2>${todayData.length}</h2>`
+  watchedNum.innerHTML = `<h2>${data.length}</h2>`
+})
+
   fetch(`http://localhost:3000/user_episodes/${sessionStorage.getItem("user")}`)
   .then(resp=> resp.json())
   .then(resp=>{
 
    runtimeCount.innerHTML=`<h2>${Math.round(resp.reduce((sum, ep) => sum + ep.runtime, 0)/60)} hrs</h2>` 
   })
-})
 }
