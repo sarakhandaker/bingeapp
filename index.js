@@ -158,9 +158,9 @@ function makeusercards(title, usershow){
           <span class="remove"> <img id="remove" src="img/delete.png" alt=""> </span>
         </div>`
   let info=document.createElement('div')
-  info.className="col-sm-6 information-right"
+  info.className="col-sm-12 information-right"
   info.innerHTML =`     
-      <div class="information-button">
+      <div class="col-sm-12 information-button">
         <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
           <img src="img/Information.png" alt="">
         </a>  
@@ -387,3 +387,6 @@ function handleSeen (event, episode, infoDiv) {
 
 //_____________TO DO__________________
 //add episode info(img, airdate) to db
+
+
+
