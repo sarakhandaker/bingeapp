@@ -95,7 +95,7 @@ function handleFollow(e,object){
                   "api_id": object.show.id,
                   "title": object.show.name
                   }
-      fetch('http://localhost:3000/user_shows', {
+      fetch('https://binge-app-api.herokuapp.com/user_shows', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -114,7 +114,7 @@ function handleFollow(e,object){
 
 function showUserShows() {
   parent.innerText = ""
-  fetch(`http://localhost:3000/user_shows/${sessionStorage.getItem("user")}`)
+  fetch(`https://binge-app-api.herokuapp.com/user_shows/${sessionStorage.getItem("user")}`)
   .then(resp=> resp.json())
   .then(resp=>{
     resp.forEach(usershow => getAPIshow(usershow))})
@@ -188,7 +188,7 @@ function makeusercards(title, usershow){
 
 function handleDelete(usershow, card){
   card.remove()
-      fetch(`http://localhost:3000/user_shows/${usershow.id}`, {
+      fetch(`https://binge-app-api.herokuapp.com/user_shows/${usershow.id}`, {
         method: 'DELETE',
       })
       .then(changeWelcome()) 
@@ -276,7 +276,7 @@ function buildBetterEpisodeCards(episodes, season) {
   let episodeRow = document.getElementById("episodeRow")
   episodeRow.innerHTML=''
   let length=episodes.length
-  fetch(`http://localhost:3000/user_episodes/${sessionStorage.getItem("user")}`)
+  fetch(`https://binge-app-api.herokuapp.com/user_episodes/${sessionStorage.getItem("user")}`)
   .then(resp => resp.json())
   .then(resp=> { let newresp=resp.map(resp=> resp.episode_id)
     let counter=0
@@ -362,7 +362,7 @@ function handleSeen (episode, infoDiv, length) {
     "episode_id": episode.id,
     "runtime": episode.runtime
     }
-    fetch('http://localhost:3000/user_episodes', {
+    fetch('https://binge-app-api.herokuapp.com/user_episodes', {
     method: 'POST',
     headers: {
     'Content-Type': 'application/json',
@@ -400,7 +400,7 @@ function handleSeenALL(episodes){
   data={ "user_id": sessionStorage.getItem("user"),
           "episode_list": episodes
         }
-  fetch('http://localhost:3000/user_episodes', {
+  fetch('https://binge-app-api.herokuapp.com/user_episodes', {
     method: 'POST',
     headers: {
     'Content-Type': 'application/json',
@@ -421,7 +421,7 @@ function handleSeenALL(episodes){
 }
 
 function handleDeleteUserEpisode(infoDiv){
-  fetch(`http://localhost:3000/user_episodes/${infoDiv.id}`, {
+  fetch(`https://binge-app-api.herokuapp.com/user_episodes/${infoDiv.id}`, {
     method: 'DELETE',
   })
   .then(()=>{
@@ -459,7 +459,6 @@ function start() {
             <div class="col-lg-3 col-md-2"></div>
         </div>
     </div>`
-    console.log(document.getElementsByClassName("btn")[0])
     let loginbtn= document.getElementsByClassName("btn")[1]
     let signupbtn= document.getElementsByClassName("signup")[0]
     signupbtn.addEventListener('click', ()=> signuporlogin(event, true))
@@ -513,7 +512,7 @@ function start() {
       const data = { username: uname, 
                     location: loc };
                    
-      fetch('http://localhost:3000/users', {
+      fetch('https://binge-app-api.herokuapp.com/users', {
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',
@@ -533,7 +532,7 @@ function start() {
     }
   
     function findUser(uname, loc){
-      fetch('http://localhost:3000/users')
+      fetch('https://binge-app-api.herokuapp.com/users')
       .then(resp=> resp.json())
       .then(resp=>{
         user=resp.find(user => user.username==uname && user.location==loc)
@@ -557,13 +556,13 @@ function start() {
 
 changeWelcome()
 function changeWelcome(){
-  fetch(`http://localhost:3000/users/${sessionStorage.getItem("user")}`)
+  fetch(`https://binge-app-api.herokuapp.com/users/${sessionStorage.getItem("user")}`)
   .then(resp=> resp.json())
   .then(user=>{
   welcomeUser.innerHTML = `<h1> Hello, ${(user.username).charAt(0).toUpperCase() + (user.username).slice(1)}!</h1>`
   followerCount.innerHTML = `<h2>${user.shows.length}</h2>`
 })
-  fetch(`http://localhost:3000/user_episodes/${sessionStorage.getItem("user")}`)
+  fetch(`https://binge-app-api.herokuapp.com/user_episodes/${sessionStorage.getItem("user")}`)
 .then(resp => resp.json())
 .then(data=> {
   let today=new Date()
@@ -573,7 +572,7 @@ function changeWelcome(){
   watchedNum.innerHTML = `<h2>${data.length}</h2>`
 })
 
-  fetch(`http://localhost:3000/user_episodes/${sessionStorage.getItem("user")}`)
+  fetch(`https://binge-app-api.herokuapp.com/user_episodes/${sessionStorage.getItem("user")}`)
   .then(resp=> resp.json())
   .then(resp=>{
 
